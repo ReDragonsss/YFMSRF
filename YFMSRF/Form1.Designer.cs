@@ -1,0 +1,164 @@
+﻿
+namespace YFMSRF
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Обязательная переменная конструктора.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Освободить все используемые ресурсы.
+        /// </summary>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Код, автоматически созданный конструктором форм Windows
+
+        /// <summary>
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Изменить пользователя";
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButton2.Location = new System.Drawing.Point(3, 104);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(346, 68);
+            this.metroButton2.TabIndex = 3;
+            this.metroButton2.Text = "Об утверждении порядка депортации иностранных граждан\r\n и лиц без гражданства РФ " +
+    "\r\nи его терриальным органам";
+            this.metroButton2.UseSelectable = true;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(3, 178);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(346, 50);
+            this.metroButton3.TabIndex = 4;
+            this.metroButton3.Text = "Выдача визы \r\nи \r\nзаполение визовой анкеты";
+            this.metroButton3.UseSelectable = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(411, 60);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel1.TabIndex = 5;
+            this.metroLabel1.Text = "Пользователь";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(411, 101);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(75, 38);
+            this.metroLabel2.TabIndex = 6;
+            this.metroLabel2.Text = "Должность\r\n";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(411, 13);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.TabIndex = 7;
+            this.metroLabel3.Text = "metroLabel3";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButton1.Location = new System.Drawing.Point(3, 42);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(346, 56);
+            this.metroButton1.TabIndex = 8;
+            this.metroButton1.Text = "О порядке принятия решения \r\nо неразрешении въезда в РФ\r\nв отношении Иностранного" +
+    " гражданина\r\n";
+            this.metroButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton1.UseSelectable = true;
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(12, 394);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(122, 33);
+            this.metroButton4.TabIndex = 9;
+            this.metroButton4.Text = "База данных";
+            this.metroButton4.UseSelectable = true;
+            // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(527, 404);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(75, 23);
+            this.metroButton5.TabIndex = 10;
+            this.metroButton5.Text = "Выход";
+            this.metroButton5.UseSelectable = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(625, 450);
+            this.Controls.Add(this.metroButton5);
+            this.Controls.Add(this.metroButton4);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroButton3);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton4;
+        private MetroFramework.Controls.MetroButton metroButton5;
+    }
+}
+
