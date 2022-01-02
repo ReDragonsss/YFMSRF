@@ -21,5 +21,10 @@ namespace YFMSRF
         {
 
         }
+
+        private void metroTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

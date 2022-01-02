@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace YFMSRF
 {
-    public partial class Form6 : MetroFramework.Forms.MetroForm
+    public partial class Form7 : MetroFramework.Forms.MetroForm
     {
-        public Form6()
+        public Form7()
         {
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox15_Click(object sender, EventArgs e)
+        private void Form7_Load(object sender, EventArgs e)
         {
 
         }
