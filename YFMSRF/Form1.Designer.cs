@@ -34,10 +34,10 @@ namespace YFMSRF
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -73,29 +73,20 @@ namespace YFMSRF
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(411, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(184, 13);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(20, 19);
             this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "Пользователь";
+            this.metroLabel1.Text = "id";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(411, 101);
+            this.metroLabel2.Location = new System.Drawing.Point(395, 72);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 38);
             this.metroLabel2.TabIndex = 6;
             this.metroLabel2.Text = "Должность\r\n";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(411, 13);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "metroLabel3";
             // 
             // metroButton1
             // 
@@ -127,15 +118,24 @@ namespace YFMSRF
             this.metroButton5.Text = "Выход";
             this.metroButton5.UseSelectable = true;
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(395, 42);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel3.TabIndex = 11;
+            this.metroLabel3.Text = "Пользователь";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 450);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton3);
@@ -155,10 +155,10 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton5;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
 

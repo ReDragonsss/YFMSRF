@@ -482,7 +482,7 @@ namespace YFMSRF
             this.groupBox1.Size = new System.Drawing.Size(138, 137);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Сотрудник";
             // 
             // groupBox2
             // 
@@ -494,7 +494,7 @@ namespace YFMSRF
             this.groupBox2.Size = new System.Drawing.Size(138, 104);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Реквизиты";
             // 
             // groupBox3
             // 
@@ -508,7 +508,7 @@ namespace YFMSRF
             this.groupBox3.Size = new System.Drawing.Size(138, 170);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Эмигрант";
             // 
             // metroTextBox14
             // 

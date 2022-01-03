@@ -316,7 +316,7 @@ namespace YFMSRF
             // 
             // 
             this.metroTextBox9.CustomButton.Image = null;
-            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(301, 1);
+            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(175, 1);
             this.metroTextBox9.CustomButton.Name = "";
             this.metroTextBox9.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -335,7 +335,7 @@ namespace YFMSRF
             this.metroTextBox9.SelectionLength = 0;
             this.metroTextBox9.SelectionStart = 0;
             this.metroTextBox9.ShortcutsEnabled = true;
-            this.metroTextBox9.Size = new System.Drawing.Size(323, 23);
+            this.metroTextBox9.Size = new System.Drawing.Size(197, 23);
             this.metroTextBox9.TabIndex = 8;
             this.metroTextBox9.Text = "Цель пребывания";
             this.metroTextBox9.UseSelectable = true;
@@ -437,7 +437,7 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(485, 463);
+            this.metroButton2.Location = new System.Drawing.Point(363, 463);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(100, 30);
             this.metroButton2.TabIndex = 14;
@@ -464,7 +464,7 @@ namespace YFMSRF
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(510, 18);
+            this.metroButton3.Location = new System.Drawing.Point(388, 18);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(75, 23);
             this.metroButton3.TabIndex = 17;
@@ -475,7 +475,7 @@ namespace YFMSRF
             // 
             this.metroComboBox3.FormattingEnabled = true;
             this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(428, 76);
+            this.metroComboBox3.Location = new System.Drawing.Point(306, 76);
             this.metroComboBox3.Name = "metroComboBox3";
             this.metroComboBox3.Size = new System.Drawing.Size(157, 29);
             this.metroComboBox3.TabIndex = 18;
@@ -496,7 +496,7 @@ namespace YFMSRF
             this.metroTextBox12.CustomButton.UseSelectable = true;
             this.metroTextBox12.CustomButton.Visible = false;
             this.metroTextBox12.Lines = new string[0];
-            this.metroTextBox12.Location = new System.Drawing.Point(428, 111);
+            this.metroTextBox12.Location = new System.Drawing.Point(306, 111);
             this.metroTextBox12.MaxLength = 32767;
             this.metroTextBox12.Name = "metroTextBox12";
             this.metroTextBox12.PasswordChar = '\0';
@@ -526,7 +526,7 @@ namespace YFMSRF
             this.metroTextBox13.CustomButton.UseSelectable = true;
             this.metroTextBox13.CustomButton.Visible = false;
             this.metroTextBox13.Lines = new string[0];
-            this.metroTextBox13.Location = new System.Drawing.Point(428, 140);
+            this.metroTextBox13.Location = new System.Drawing.Point(306, 140);
             this.metroTextBox13.MaxLength = 32767;
             this.metroTextBox13.Name = "metroTextBox13";
             this.metroTextBox13.PasswordChar = '\0';
@@ -556,7 +556,7 @@ namespace YFMSRF
             this.metroTextBox14.CustomButton.UseSelectable = true;
             this.metroTextBox14.CustomButton.Visible = false;
             this.metroTextBox14.Lines = new string[0];
-            this.metroTextBox14.Location = new System.Drawing.Point(428, 169);
+            this.metroTextBox14.Location = new System.Drawing.Point(306, 169);
             this.metroTextBox14.MaxLength = 32767;
             this.metroTextBox14.Name = "metroTextBox14";
             this.metroTextBox14.PasswordChar = '\0';
@@ -587,7 +587,7 @@ namespace YFMSRF
             this.metroTextBox15.CustomButton.Visible = false;
             this.metroTextBox15.Lines = new string[] {
         "Фио"};
-            this.metroTextBox15.Location = new System.Drawing.Point(428, 47);
+            this.metroTextBox15.Location = new System.Drawing.Point(306, 47);
             this.metroTextBox15.MaxLength = 32767;
             this.metroTextBox15.Name = "metroTextBox15";
             this.metroTextBox15.PasswordChar = '\0';
@@ -607,7 +607,7 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 502);
+            this.ClientSize = new System.Drawing.Size(474, 502);
             this.Controls.Add(this.metroTextBox15);
             this.Controls.Add(this.metroTextBox14);
             this.Controls.Add(this.metroTextBox13);

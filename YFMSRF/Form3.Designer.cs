@@ -30,10 +30,10 @@ namespace YFMSRF
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
@@ -44,7 +44,6 @@ namespace YFMSRF
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -66,6 +65,24 @@ namespace YFMSRF
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(403, 4);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(205, 23);
+            this.metroButton3.TabIndex = 2;
+            this.metroButton3.Text = "Добавление паспорта иностранца";
+            this.metroButton3.UseSelectable = true;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(216, 4);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(167, 23);
+            this.metroButton2.TabIndex = 1;
+            this.metroButton2.Text = "Визовая анкета";
+            this.metroButton2.UseSelectable = true;
+            // 
             // metroButton1
             // 
             this.metroButton1.Location = new System.Drawing.Point(20, 4);
@@ -77,35 +94,17 @@ namespace YFMSRF
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(521, 395);
+            this.metroButton4.Location = new System.Drawing.Point(521, 371);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(75, 23);
             this.metroButton4.TabIndex = 1;
             this.metroButton4.Text = "Назад";
             this.metroButton4.UseSelectable = true;
             // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(216, 4);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(167, 23);
-            this.metroButton2.TabIndex = 1;
-            this.metroButton2.Text = "Визовая анкета";
-            this.metroButton2.UseSelectable = true;
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(403, 4);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(205, 23);
-            this.metroButton3.TabIndex = 2;
-            this.metroButton3.Text = "Добавление паспорта иностранца";
-            this.metroButton3.UseSelectable = true;
-            // 
             // metroButton5
             // 
             this.metroButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.metroButton5.Location = new System.Drawing.Point(23, 395);
+            this.metroButton5.Location = new System.Drawing.Point(15, 371);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(114, 23);
             this.metroButton5.TabIndex = 2;
@@ -304,38 +303,6 @@ namespace YFMSRF
             this.metroComboBox2.TabIndex = 12;
             this.metroComboBox2.UseSelectable = true;
             // 
-            // metroTextBox7
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox7.CustomButton.Image = null;
-            this.metroTextBox7.CustomButton.Location = new System.Drawing.Point(537, 1);
-            this.metroTextBox7.CustomButton.Name = "";
-            this.metroTextBox7.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox7.CustomButton.TabIndex = 1;
-            this.metroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox7.CustomButton.UseSelectable = true;
-            this.metroTextBox7.CustomButton.Visible = false;
-            this.metroTextBox7.Lines = new string[] {
-        "metroTextBox7"};
-            this.metroTextBox7.Location = new System.Drawing.Point(23, 294);
-            this.metroTextBox7.MaxLength = 32767;
-            this.metroTextBox7.Name = "metroTextBox7";
-            this.metroTextBox7.PasswordChar = '\0';
-            this.metroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox7.SelectedText = "";
-            this.metroTextBox7.SelectionLength = 0;
-            this.metroTextBox7.SelectionStart = 0;
-            this.metroTextBox7.ShortcutsEnabled = true;
-            this.metroTextBox7.Size = new System.Drawing.Size(559, 23);
-            this.metroTextBox7.TabIndex = 13;
-            this.metroTextBox7.Text = "metroTextBox7";
-            this.metroTextBox7.UseSelectable = true;
-            this.metroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox7.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroTextBox8
             // 
             // 
@@ -352,7 +319,7 @@ namespace YFMSRF
             this.metroTextBox8.CustomButton.Visible = false;
             this.metroTextBox8.Lines = new string[] {
         "Принимающая организация"};
-            this.metroTextBox8.Location = new System.Drawing.Point(23, 323);
+            this.metroTextBox8.Location = new System.Drawing.Point(23, 301);
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
@@ -384,7 +351,7 @@ namespace YFMSRF
             this.metroTextBox9.CustomButton.Visible = false;
             this.metroTextBox9.Lines = new string[] {
         "Дополнительные сведения"};
-            this.metroTextBox9.Location = new System.Drawing.Point(23, 352);
+            this.metroTextBox9.Location = new System.Drawing.Point(23, 330);
             this.metroTextBox9.MaxLength = 32767;
             this.metroTextBox9.Name = "metroTextBox9";
             this.metroTextBox9.PasswordChar = '\0';
@@ -439,14 +406,13 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 430);
+            this.ClientSize = new System.Drawing.Size(605, 402);
             this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroTextBox9);
             this.Controls.Add(this.metroTextBox8);
-            this.Controls.Add(this.metroTextBox7);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroTextBox6);
             this.Controls.Add(this.metroTextBox5);
@@ -484,7 +450,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroTextBox metroTextBox6;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox7;
         private MetroFramework.Controls.MetroTextBox metroTextBox8;
         private MetroFramework.Controls.MetroTextBox metroTextBox9;
         private MetroFramework.Controls.MetroLabel metroLabel3;

@@ -44,7 +44,7 @@ namespace YFMSRF
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(131, 14);
+            this.label1.Location = new System.Drawing.Point(74, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 20);
             this.label1.TabIndex = 6;
@@ -254,7 +254,7 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(503, 259);
+            this.metroButton2.Location = new System.Drawing.Point(428, 259);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(75, 23);
             this.metroButton2.TabIndex = 14;
@@ -265,7 +265,7 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 294);
+            this.ClientSize = new System.Drawing.Size(519, 294);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTextBox6);
