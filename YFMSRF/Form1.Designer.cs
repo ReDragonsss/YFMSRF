@@ -99,6 +99,7 @@ namespace YFMSRF
     " гражданина\r\n";
             this.metroButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton4
             // 

@@ -64,5 +64,11 @@ namespace YFMSRF
                 this.Close();
             }
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
     }
 }

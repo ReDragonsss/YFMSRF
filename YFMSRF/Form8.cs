@@ -84,12 +84,11 @@ namespace YFMSRF
             //ID конкретной записи в Базе данных, на основании индекса строки
             id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
             //Указываем ID выделенной строки в метке
-            toolStripLabel2.Text = id_selected_rows;
-            ControlData.ID_PC = id_selected_rows;
+            //toolStripLabel2.Text = id_selected_rows;
+            //ControlData.ID_PC = id_selected_rows;
         }
         public void GetListUsers()
         {
-            Ohelp();
             string commandStr = $"SELECT name_pc, windows, name_cp, operativ_memory, kod_pc  FROM {avtosalon}";
             conn.Open();
             MyDA.SelectCommand = new MySqlCommand(commandStr, conn);
@@ -101,7 +100,7 @@ namespace YFMSRF
             conn.Close();
             //Отражаем количество записей в ДатаГриде
             int count_rows = dataGridView1.RowCount - 1;
-            toolStripLabel2.Text = (count_rows).ToString();
+            //toolStripLabel2.Text = (count_rows).ToString();
         }
         public bool DeleteInfo()// Запрос на удаление
         {
@@ -151,68 +150,20 @@ namespace YFMSRF
         }
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            ControlData.ComboId=toolStripComboBox1.Text;
-            ControlData.ID_PC = id_selected_rows;
+            //ControlData.ComboId=toolStripComboBox1.Text;
+            //ControlData.ID_PC = id_selected_rows;
             Form1 form1 = new Form1();
             form1.ShowDialog();
             reload_list();
         }
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ControlData.ComboId=toolStripComboBox1.Text;
-            ControlData.ID_PC = id_selected_rows;
+            //ControlData.ComboId=toolStripComboBox1.Text;
+            //ControlData.ID_PC = id_selected_rows;
             Form1 form1 = new Form1();
             form1.ShowDialog();
             reload_list();
         }
-        public void Ohelp()
-        {
 
-            if (toolStripComboBox1.SelectedIndex == 0)
-            {
-                avtosalon = "Comp1";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 1)
-            {
-                avtosalon = "Comp2";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 2)
-            {
-                avtosalon = "Comp3";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 3)
-            {
-                avtosalon = "Comp4";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 4)
-            {
-                avtosalon = "Comp5";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 5)
-            {
-                avtosalon = "Comp6";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 6)
-            {
-                avtosalon = "Comp7";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 7)
-            {
-                avtosalon = "Comp8";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 8)
-            {
-                avtosalon = "Comp9";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 9)
-            {
-                avtosalon = "Comp10";
-            }
-            else if (toolStripComboBox1.SelectedIndex == 10)
-            {
-                avtosalon = "Comp11";
-            }
-        }
     }
-}
 }
