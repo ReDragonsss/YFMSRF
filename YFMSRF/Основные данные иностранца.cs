@@ -60,13 +60,13 @@ namespace YFMSRF
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string famil = metroTextBox1.Text;
-            string name = metroTextBox2.Text;
-            string otcestv = metroTextBox3.Text;
-            string pol = metroTextBox4.Text;
-            string rojd= metroTextBox5.Text;
-            string mestro = metroTextBox6.Text;
-            InsertComp(famil, name, otcestv, pol, rojd, mestro);
+            string p1 = metroTextBox1.Text;
+            string p2 = metroTextBox2.Text;
+            string p3 = metroTextBox3.Text;
+            string p4 = metroTextBox4.Text;
+            string p5 = metroTextBox5.Text;
+            string p6 = metroTextBox6.Text;
+            InsertComp(p1,p2,p3,p4,p5,p6);
         }
 
         private void metroButton3_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace YFMSRF
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(74, 15);
+            this.label1.Location = new System.Drawing.Point(56, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 20);
             this.label1.TabIndex = 6;
@@ -67,7 +67,7 @@ namespace YFMSRF
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[] {
         "Фамилия "};
-            this.metroTextBox1.Location = new System.Drawing.Point(23, 74);
+            this.metroTextBox1.Location = new System.Drawing.Point(23, 63);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -99,7 +99,7 @@ namespace YFMSRF
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[] {
         "Имя"};
-            this.metroTextBox2.Location = new System.Drawing.Point(23, 103);
+            this.metroTextBox2.Location = new System.Drawing.Point(23, 92);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -131,7 +131,7 @@ namespace YFMSRF
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[] {
         "Отчество"};
-            this.metroTextBox3.Location = new System.Drawing.Point(23, 132);
+            this.metroTextBox3.Location = new System.Drawing.Point(23, 121);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -164,7 +164,7 @@ namespace YFMSRF
             this.metroTextBox4.CustomButton.Visible = false;
             this.metroTextBox4.Lines = new string[] {
         "Пол"};
-            this.metroTextBox4.Location = new System.Drawing.Point(23, 161);
+            this.metroTextBox4.Location = new System.Drawing.Point(23, 150);
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
@@ -196,7 +196,7 @@ namespace YFMSRF
             this.metroTextBox5.CustomButton.Visible = false;
             this.metroTextBox5.Lines = new string[] {
         "Дата рождения"};
-            this.metroTextBox5.Location = new System.Drawing.Point(23, 190);
+            this.metroTextBox5.Location = new System.Drawing.Point(23, 179);
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
@@ -228,7 +228,7 @@ namespace YFMSRF
             this.metroTextBox6.CustomButton.Visible = false;
             this.metroTextBox6.Lines = new string[] {
         "Место рождения"};
-            this.metroTextBox6.Location = new System.Drawing.Point(23, 219);
+            this.metroTextBox6.Location = new System.Drawing.Point(23, 208);
             this.metroTextBox6.MaxLength = 32767;
             this.metroTextBox6.Name = "metroTextBox6";
             this.metroTextBox6.PasswordChar = '\0';
@@ -246,7 +246,7 @@ namespace YFMSRF
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 259);
+            this.metroButton1.Location = new System.Drawing.Point(23, 248);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.TabIndex = 13;
@@ -256,7 +256,7 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(428, 259);
+            this.metroButton2.Location = new System.Drawing.Point(360, 248);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(75, 23);
             this.metroButton2.TabIndex = 14;
@@ -265,7 +265,7 @@ namespace YFMSRF
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(122, 259);
+            this.metroButton3.Location = new System.Drawing.Point(122, 248);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(112, 23);
             this.metroButton3.TabIndex = 15;
@@ -277,7 +277,7 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 294);
+            this.ClientSize = new System.Drawing.Size(444, 278);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
