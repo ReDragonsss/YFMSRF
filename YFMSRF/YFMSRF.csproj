@@ -64,6 +64,12 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
+    <Compile Include="TechHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechHelp.Designer.cs">
+      <DependentUpon>TechHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test_Connect_Printer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechHelp.resx">
+      <DependentUpon>TechHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Connect_Printer.resx">
       <DependentUpon>Test_Connect_Printer.cs</DependentUpon>

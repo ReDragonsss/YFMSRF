@@ -106,5 +106,11 @@ namespace YFMSRF
             Form8 f8 = new Form8();
             f8.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            TechHelp th = new TechHelp();
+            th.Show();
+        }
     }
 }
