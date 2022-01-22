@@ -83,8 +83,7 @@ namespace YFMSRF
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-
-            this.Close();
+            Application.Exit();
         }
 
         private void metroTextBox2_TextChanged(object sender, EventArgs e)

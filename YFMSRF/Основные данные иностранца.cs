@@ -34,6 +34,7 @@ namespace YFMSRF
             {
                 //Если возникла ошибка, то запрос не вставит ни одной строки
                 InsertCount = 0;
+                MessageBox.Show($"Неповезло");
             }
             finally
             {
@@ -43,6 +44,7 @@ namespace YFMSRF
                 {
                     result = true;
                 }
+                MessageBox.Show($"Успех");
             }
             return result;
         }
@@ -82,6 +84,11 @@ namespace YFMSRF
                     MessageBox.Show("Произошла ошибка"+ osh);
                     conn.Close();
                 }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -61,7 +61,7 @@ namespace YFMSRF
             this.groupBox1.Controls.Add(this.metroButton1);
             this.groupBox1.Location = new System.Drawing.Point(-12, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 32);
+            this.groupBox1.Size = new System.Drawing.Size(621, 32);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -73,6 +73,7 @@ namespace YFMSRF
             this.metroButton3.TabIndex = 2;
             this.metroButton3.Text = "Добавление паспорта иностранца";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton2
             // 
@@ -82,6 +83,7 @@ namespace YFMSRF
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Визовая анкета";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton1
             // 
@@ -91,6 +93,7 @@ namespace YFMSRF
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "Основные данные иностранца";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton4
             // 
@@ -100,6 +103,7 @@ namespace YFMSRF
             this.metroButton4.TabIndex = 1;
             this.metroButton4.Text = "Назад";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // metroButton5
             // 

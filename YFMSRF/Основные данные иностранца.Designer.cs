@@ -262,6 +262,7 @@ namespace YFMSRF
             this.metroButton2.TabIndex = 14;
             this.metroButton2.Text = "Назад";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton3
             // 

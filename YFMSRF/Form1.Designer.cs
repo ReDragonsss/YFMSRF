@@ -38,6 +38,7 @@ namespace YFMSRF
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,6 +50,7 @@ namespace YFMSRF
             this.label1.Size = new System.Drawing.Size(169, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Изменить пользователя";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // metroButton2
             // 
@@ -69,6 +71,7 @@ namespace YFMSRF
             this.metroButton3.TabIndex = 4;
             this.metroButton3.Text = "Выдача визы \r\nи \r\nзаполение визовой анкеты";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroLabel1
             // 
@@ -128,11 +131,22 @@ namespace YFMSRF
             this.metroLabel3.TabIndex = 11;
             this.metroLabel3.Text = "Пользователь";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 347);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 30);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "печатка";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
@@ -160,6 +174,7 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

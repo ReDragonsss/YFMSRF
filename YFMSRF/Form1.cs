@@ -23,7 +23,7 @@ namespace YFMSRF
                 case 1://отдел депортации
                     metroButton1.Enabled = true;
                     metroButton2.Enabled = true;
-                    metroButton3.Enabled = false;
+                    metroButton3.Enabled = true;//false
                     break;
                 case 2:// разрешительно-визовой работы
                     metroButton1.Enabled = false;
@@ -67,8 +67,38 @@ namespace YFMSRF
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            Form7 f7 = new Form7();
+            f7.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Test_Connect_Printer t = new Test_Connect_Printer();
+            t.Show();
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
             Form3 f3 = new Form3();
             f3.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 avtoriz = new Form2();
+            avtoriz.ShowDialog();
+            if (Auth.auth)
+            {
+                //Отображаем рабочую форму
+                this.Show();
+                //Вытаскиваем из класса поля в label'ы
+                metroLabel1.Text = Auth.auth_id;
+                metroLabel2.Text = Auth.auth_fio;
+                ManagerRole(Auth.auth_role);
+                metroLabel3.Text = Auth.auth_sotr;
+            }
+
         }
     }
 }

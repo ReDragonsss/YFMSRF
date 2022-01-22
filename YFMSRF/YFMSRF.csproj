@@ -43,7 +43,7 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Desktop\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +63,12 @@
     </Compile>
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Connect_Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Connect_Printer.Designer.cs">
+      <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
     </Compile>
     <Compile Include="Для сотрудников.cs" />
     <Compile Include="Form1.cs">
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Connect_Printer.resx">
+      <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Основные данные иностранца.resx">
       <DependentUpon>Основные данные иностранца.cs</DependentUpon>
