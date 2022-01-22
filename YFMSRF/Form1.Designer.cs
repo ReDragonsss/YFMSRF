@@ -112,6 +112,7 @@ namespace YFMSRF
             this.metroButton4.TabIndex = 9;
             this.metroButton4.Text = "База данных";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // metroButton5
             // 
@@ -145,7 +146,7 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 450);
+            this.ClientSize = new System.Drawing.Size(625, 433);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton5);

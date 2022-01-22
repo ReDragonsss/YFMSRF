@@ -37,6 +37,7 @@ namespace YFMSRF
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
@@ -88,11 +89,22 @@ namespace YFMSRF
             // 
             this.printDialog.UseEXDialog = true;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(717, 8);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(84, 23);
+            this.metroButton1.TabIndex = 1;
+            this.metroButton1.Text = "Закрыть";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // Test_Connect_Printer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 450);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Test_Connect_Printer";
             this.Text = "Распечатка отчетов";
@@ -112,5 +124,6 @@ namespace YFMSRF
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintDialog printDialog;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

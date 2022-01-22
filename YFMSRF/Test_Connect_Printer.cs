@@ -49,6 +49,11 @@ namespace YFMSRF
         {
             this.Close();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 // можно в будущем добавить удаление за определенный срок, таким образом можно создать аккаунт начальника отдела и повысить 

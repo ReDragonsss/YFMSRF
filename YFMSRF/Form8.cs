@@ -29,7 +29,7 @@ namespace YFMSRF
         private DataTable table = new DataTable();
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
-        string id_selected_rows = "0";
+        string id_selected_rows = null;
         private void Form8_Load(object sender, EventArgs e)
         {
             string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
@@ -130,14 +130,6 @@ namespace YFMSRF
             }
             return result;
         }
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            reload_list();
-        }
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            DeleteInfo();
-        }
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Right))
@@ -165,5 +157,50 @@ namespace YFMSRF
             reload_list();
         }
 
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            // доступ высшее начальство
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            // доступ высшее начальство
+            // доступ отдел по вопросам гражданства
+            // доступ отдел по вопросам депортации
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            // доступ высшее начальство
+            // доступ отдел по вопросам депортации
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            // доступ высшее начальство
+            // доступ отдел по вопросам гражданства
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            reload_list();
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void metroButton8_Click(object sender, EventArgs e)
+        {
+            DeleteInfo();
+        }
+
+        private void metroButton7_Click(object sender, EventArgs e)
+        {
+            // доступ отдел по вопросам гражданства
+            // доступ отдел по вопросам депортации
+            // доступ высшее начальство
+        }
     }
 }

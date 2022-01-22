@@ -100,5 +100,11 @@ namespace YFMSRF
             }
 
         }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            Form8 f8 = new Form8();
+            f8.Show();
+        }
     }
 }
