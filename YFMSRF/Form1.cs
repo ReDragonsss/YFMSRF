@@ -23,7 +23,7 @@ namespace YFMSRF
                 case 1://отдел депортации
                     metroButton1.Enabled = true;
                     metroButton2.Enabled = true;
-                    metroButton3.Enabled = true;//false
+                    metroButton3.Enabled = false;//false
                     break;
                 case 2:// разрешительно-визовой работы
                     metroButton1.Enabled = false;

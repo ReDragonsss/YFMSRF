@@ -91,9 +91,9 @@ namespace YFMSRF
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(717, 8);
+            this.metroButton1.Location = new System.Drawing.Point(698, 8);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(84, 23);
+            this.metroButton1.Size = new System.Drawing.Size(103, 27);
             this.metroButton1.TabIndex = 1;
             this.metroButton1.Text = "Закрыть";
             this.metroButton1.UseSelectable = true;
