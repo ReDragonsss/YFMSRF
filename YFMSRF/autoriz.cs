@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
-    public partial class Form2 : MetroFramework.Forms.MetroForm
+    public partial class autoriz : MetroFramework.Forms.MetroForm
     {
         string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
         MySqlConnection conn;
@@ -45,7 +45,7 @@ namespace YFMSRF
             conn.Close();
         }
 
-        public Form2()
+        public autoriz()
         {
             InitializeComponent();
         }

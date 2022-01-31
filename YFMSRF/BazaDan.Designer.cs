@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Form8
+    partial class BazaDan
     {
         /// <summary>
         /// Required designer variable.

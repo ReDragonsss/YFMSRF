@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Form1
+    partial class mainmenu
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -154,7 +154,7 @@ namespace YFMSRF
             this.label2.Text = "Техническая поддержка";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Form1
+            // mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +170,8 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Name = "mainmenu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

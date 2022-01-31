@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace YFMSRF
 {
-    public partial class Form7 : MetroFramework.Forms.MetroForm
+    public partial class otddeport : MetroFramework.Forms.MetroForm
     {
-        public Form7()
+        public otddeport()
         {
             InitializeComponent();
         }

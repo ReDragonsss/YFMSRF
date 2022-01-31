@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Form7
+    partial class otddeport
     {
         /// <summary>
         /// Required designer variable.
@@ -612,7 +612,7 @@ namespace YFMSRF
             this.metroButton2.Text = "metroButton2";
             this.metroButton2.UseSelectable = true;
             // 
-            // Form7
+            // otddeport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -630,7 +630,8 @@ namespace YFMSRF
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroTextBox8);
-            this.Name = "Form7";
+            this.Name = "otddeport";
+            this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Form7_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

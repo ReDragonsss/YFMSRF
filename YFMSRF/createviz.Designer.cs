@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Form3
+    partial class createviz
     {
         /// <summary>
         /// Required designer variable.

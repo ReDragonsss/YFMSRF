@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Form2
+    partial class autoriz
     {
         /// <summary>
         /// Required designer variable.

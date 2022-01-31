@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace YFMSRF
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class mainmenu : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public mainmenu()
         {
             InitializeComponent();
         }
@@ -47,7 +47,7 @@ namespace YFMSRF
         private void Form1_Load(object sender, EventArgs e)
         {
           this.Hide();
-            Form2 avtoriz = new Form2();
+            autoriz avtoriz = new autoriz();
             avtoriz.ShowDialog();
             if (Auth.auth)
             {
@@ -67,7 +67,7 @@ namespace YFMSRF
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            Form7 f7 = new Form7();
+            otddeport f7 = new otddeport();
             f7.Show();
         }
 
@@ -79,14 +79,14 @@ namespace YFMSRF
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            createviz f3 = new createviz();
             f3.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 avtoriz = new Form2();
+            autoriz avtoriz = new autoriz();
             avtoriz.ShowDialog();
             if (Auth.auth)
             {
@@ -103,7 +103,7 @@ namespace YFMSRF
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            Form8 f8 = new Form8();
+            BazaDan f8 = new BazaDan();
             f8.Show();
         }
 

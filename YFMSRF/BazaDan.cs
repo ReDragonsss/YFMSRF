@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
-    public partial class Form8 : MetroFramework.Forms.MetroForm
+    public partial class BazaDan : MetroFramework.Forms.MetroForm
     {
-        public Form8()
+        public BazaDan()
         {
             InitializeComponent();
         }
@@ -144,7 +144,7 @@ namespace YFMSRF
         {
             //ControlData.ComboId=toolStripComboBox1.Text;
             //ControlData.ID_PC = id_selected_rows;
-            Form1 form1 = new Form1();
+            mainmenu form1 = new mainmenu();
             form1.ShowDialog();
             reload_list();
         }
@@ -152,7 +152,7 @@ namespace YFMSRF
         {
             //ControlData.ComboId=toolStripComboBox1.Text;
             //ControlData.ID_PC = id_selected_rows;
-            Form1 form1 = new Form1();
+            mainmenu form1 = new mainmenu();
             form1.ShowDialog();
             reload_list();
         }
