@@ -410,6 +410,9 @@ namespace YFMSRF
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Стандартный",
+            "Биометрический"});
             this.metroComboBox1.Location = new System.Drawing.Point(8, 121);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(197, 29);
@@ -420,6 +423,9 @@ namespace YFMSRF
             // 
             this.metroComboBox2.FormattingEnabled = true;
             this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "Да",
+            "Нет"});
             this.metroComboBox2.Location = new System.Drawing.Point(8, 349);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(197, 29);

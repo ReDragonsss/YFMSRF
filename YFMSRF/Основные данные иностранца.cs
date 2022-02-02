@@ -24,7 +24,7 @@ namespace YFMSRF
             bool result = false;
             int InsertCount = 0;
             conn.Open();
-            string sql = $"INSERT INTO Osnov_dannie_inostr (fam, name, otchestv, pol, data_rojdenia, mestro_rojden) VALUES ('{famil}', '{name}', '{otcestv}', '{pol}', '{rojd}','{mestro}')";
+            string sql = $"INSERT INTO Osnov_dannie_inostr (fam, name, otchestv, pol, data_rojdenia, mestro_rojden) VALUES ('{famil}','{name}','{otcestv}','{pol}','{rojd}','{mestro}')";
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);
@@ -34,16 +34,15 @@ namespace YFMSRF
             {
                 //Если возникла ошибка, то запрос не вставит ни одной строки
                 InsertCount = 0;
-                MessageBox.Show($"Неповезло");
             }
             finally
             {
-                conn.Close();
                 //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
                 if (InsertCount !=0)
                 {
                     result = true;
                 }
+                conn.Close();
                 MessageBox.Show($"Успех");
             }
             return result;
