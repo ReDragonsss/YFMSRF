@@ -29,7 +29,6 @@ namespace YFMSRF
         }
         public void GetUserInfo(string login)
         {
-            string selected_id_stud = metroTextBox1.Text;
             conn.Open();
             string sql = $"SELECT * FROM Auto WHERE login='{login}'";
             MySqlCommand command = new MySqlCommand(sql, conn);
@@ -37,12 +36,16 @@ namespace YFMSRF
             while (reader.Read())
             {
                 Auth.auth_id = reader[0].ToString();
-                Auth.auth_fio = reader[1].ToString();
+                Auth.auth_login = reader[1].ToString();
                 Auth.auth_role = Convert.ToInt32(reader[3].ToString());
                 Auth.auth_sotr= reader[4].ToString();
             }
             reader.Close(); 
             conn.Close();
+            {
+               // SELECT sotrudnik.id_zvanie
+                //FROM zvanie INNER JOIN sotrudnik ON zvanie.id_zvanie = sotrudnik.id_zvanie;
+            }
         }
 
         public autoriz()

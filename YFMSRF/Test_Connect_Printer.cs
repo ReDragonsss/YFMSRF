@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,15 +25,30 @@ namespace YFMSRF
 
         private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-        }
+            // объект для печати
+            PrintDocument printDocument = new PrintDocument();
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+            // обработчик события печати
+            printDocument.PrintPage += PrintPageHandler;
+
+            // диалог настройки печати
+            PrintDialog printDialog = new PrintDialog();
+
+            // установка объекта печати для его настройки
+            printDialog.Document = printDocument;
+
+            // если в диалоге было нажато ОК
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); // печатаем
+        }
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
             Bitmap txt = new Bitmap(dataGridView1.Size.Width+10, dataGridView1.Size.Width+10);// Мы создаем новый экземпляр класса
             dataGridView1.DrawToBitmap(txt, dataGridView1.Bounds);// незнаю что это.. хотя скорее всего подготовка к разметке страниц
             e.Graphics.DrawImage(txt, 0, 0); // разметка в дюймах выше все наприсано 
-      
+        }
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
         }
 
     private void metroContextMenu1_Opening(object sender, CancelEventArgs e)

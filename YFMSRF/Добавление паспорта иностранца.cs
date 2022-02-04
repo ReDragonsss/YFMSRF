@@ -23,7 +23,7 @@ namespace YFMSRF
             bool result = false;
             int InsertCount = 0;
             conn.Open();
-            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojden,gorod_rojden,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{ovidpass}','{kpodraz}','{strrojd}','{godrojd}','{vidpropis}','{dataprop}','{regpop}','{gorprop}','{naselpunkt}','{ylica}','{dom}','{stroen}','{kvart}','{organ}''{vidregistr}')";
+            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,                                                       .            d,strana_rojden,gorod_rojden,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{ovidpass}','{kpodraz}','{strrojd}','{godrojd}','{vidpropis}','{dataprop}','{regpop}','{gorprop}','{naselpunkt}','{ylica}','{dom}','{stroen}','{kvart}','{organ}''{vidregistr}')";
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);

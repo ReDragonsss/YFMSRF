@@ -33,7 +33,6 @@ namespace YFMSRF
             catch
             {
                 //Если возникла ошибка, то запрос не вставит ни одной строки
-                InsertCount = 0;
             }
             finally
             {

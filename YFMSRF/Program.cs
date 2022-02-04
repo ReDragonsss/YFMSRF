@@ -26,7 +26,7 @@ namespace YFMSRF
         //Статичное поле, которое хранит значения ID пользователя
         public static string auth_id = null;
         //Статичное поле, которое хранит значения ФИО пользователя
-        public static string auth_fio = null;
+        public static string auth_login = null;
         //статик поле для данных сотрудника
         public static string auth_sotr = null;
         //Статичное поле, которое хранит количество привелегий пользователя

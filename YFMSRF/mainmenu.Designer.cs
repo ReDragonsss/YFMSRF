@@ -40,6 +40,8 @@ namespace YFMSRF
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@ namespace YFMSRF
             // metroButton2
             // 
             this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton2.Location = new System.Drawing.Point(3, 104);
+            this.metroButton2.Location = new System.Drawing.Point(12, 104);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(346, 68);
             this.metroButton2.TabIndex = 3;
@@ -66,7 +68,7 @@ namespace YFMSRF
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(3, 178);
+            this.metroButton3.Location = new System.Drawing.Point(12, 178);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(346, 50);
             this.metroButton3.TabIndex = 4;
@@ -77,7 +79,7 @@ namespace YFMSRF
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(184, 13);
+            this.metroLabel1.Location = new System.Drawing.Point(320, 35);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(20, 19);
             this.metroLabel1.TabIndex = 5;
@@ -86,16 +88,16 @@ namespace YFMSRF
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(395, 72);
+            this.metroLabel2.Location = new System.Drawing.Point(9, 35);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(75, 38);
+            this.metroLabel2.Size = new System.Drawing.Size(75, 19);
             this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Должность\r\n";
+            this.metroLabel2.Text = "Должность";
             // 
             // metroButton1
             // 
             this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton1.Location = new System.Drawing.Point(3, 42);
+            this.metroButton1.Location = new System.Drawing.Point(12, 42);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(346, 56);
             this.metroButton1.TabIndex = 8;
@@ -107,9 +109,9 @@ namespace YFMSRF
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(12, 394);
+            this.metroButton4.Location = new System.Drawing.Point(12, 345);
             this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(122, 33);
+            this.metroButton4.Size = new System.Drawing.Size(92, 23);
             this.metroButton4.TabIndex = 9;
             this.metroButton4.Text = "База данных";
             this.metroButton4.UseSelectable = true;
@@ -117,7 +119,7 @@ namespace YFMSRF
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(527, 404);
+            this.metroButton5.Location = new System.Drawing.Point(283, 345);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(75, 23);
             this.metroButton5.TabIndex = 10;
@@ -127,19 +129,20 @@ namespace YFMSRF
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(395, 42);
+            this.metroLabel3.Location = new System.Drawing.Point(9, 11);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(92, 19);
             this.metroLabel3.TabIndex = 11;
             this.metroLabel3.Text = "Пользователь";
+            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 347);
+            this.button1.Location = new System.Drawing.Point(12, 317);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 30);
+            this.button1.Size = new System.Drawing.Size(92, 22);
             this.button1.TabIndex = 12;
-            this.button1.Text = "печатка";
+            this.button1.Text = "Отчет";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -147,32 +150,44 @@ namespace YFMSRF
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(140, 411);
+            this.label2.Location = new System.Drawing.Point(110, 352);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Техническая поддержка";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.metroLabel3);
+            this.groupBox1.Controls.Add(this.metroLabel2);
+            this.groupBox1.Controls.Add(this.metroLabel1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 234);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(346, 58);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            // 
             // mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 433);
+            this.ClientSize = new System.Drawing.Size(373, 373);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "mainmenu";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +206,7 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
