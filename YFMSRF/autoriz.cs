@@ -96,7 +96,10 @@ namespace YFMSRF
         }
         public void GetSotrydInfo()
         {
-            string commandStr = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik";
+            string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where '{sotrudnik.auth_idZvan}'";
+            conn.Open();
+            MySqlCommand command = new MySqlCommand(sql1, conn);
+            conn.Close();
         }
     }
 }
