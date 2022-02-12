@@ -32,4 +32,16 @@ namespace YFMSRF
         //Статичное поле, которое хранит количество привелегий пользователя
         public static int auth_role = 0;
     }
-}
+    static class sotrudnik
+    {
+        public static string auth_Ima = null;// Имя сотрудника
+        public static string auth_Fam = null;// Фамилия
+        public static string auth_Otch = null;// Отчество
+        public static string auth_idZvan = null;// ИдЗван
+    }
+    static class zvanie
+    {
+        public static string auth_Zvan = null;// Зван
+    }
+} 
+

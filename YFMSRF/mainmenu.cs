@@ -117,5 +117,10 @@ namespace YFMSRF
         {
 
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

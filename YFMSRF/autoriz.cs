@@ -42,10 +42,6 @@ namespace YFMSRF
             }
             reader.Close(); 
             conn.Close();
-            {
-               // SELECT sotrudnik.id_zvanie
-                //FROM zvanie INNER JOIN sotrudnik ON zvanie.id_zvanie = sotrudnik.id_zvanie;
-            }
         }
 
         public autoriz()
@@ -98,5 +94,34 @@ namespace YFMSRF
         {
 
         }
+        public void GetSotrydInfo()
+        {
+            string commandStr = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik";
+        }
     }
 }
+
+//public void GetSotrydInfo()
+//{
+//    string sql1 = "SELECT * FROM sotrudnik";
+//    MySqlCommand command = new MySqlCommand(sql1, conn);
+//    MySqlDataReader reader = command.ExecuteReader();
+//    while (reader.Read())
+//    {
+//        sotrudnik.auth_Ima=reader[0].ToString();
+//        sotrudnik.auth_Fam=reader[1].ToString();
+//        sotrudnik.auth_Otch=reader[2].ToString();
+//        sotrudnik.auth_idZvan=reader[6].ToString();
+
+//    }
+//}
+//public void GetZvanieinfo()
+//{
+//    string sql2 = "SELECT * FROM zvanie";
+//    MySqlCommand command = new MySqlCommand(sql2, conn);
+//    MySqlDataReader reader = command.ExecuteReader();
+//    while (reader.Read())
+//    {
+//        zvanie.auth_Zvan=reader[1].ToString();
+//    }
+//}
