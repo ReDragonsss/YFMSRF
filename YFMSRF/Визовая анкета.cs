@@ -24,30 +24,31 @@ namespace YFMSRF
             string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
             conn=new MySqlConnection(connStr);
         }
-        public bool InsertComp(string strana,string grad, string fam, string vid, string num, string srok, string kod, string home, string proff, string cel, string pred, string data, string mest)
+        public bool InsertComp(string strana,string grad, string fam, string vid, string num, string kod, string home, string srok, string proff, string cel, string pred, string data, string mest)//strana grad fam vid num kod home srok proff cel pred data mest
         { 
             bool result = false;
             int InsertCount = 0;
             conn.Open();
-            string sql = $"INSERT INTO vizov_anketa (kod_viz_anketi,strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,srok_zagran_pass,kod_gosydartv,home_adress,profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{srok}','{kod}','{home}','{proff}','{cel}','{pred}','{mest}','{kod}')";
+            string sql = $"INSERT INTO vizov_anketa (strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,srok_zagran_pass,kod_gosydarstv,home_adress,profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{kod}','{home}','{srok}','{proff}','{cel}','{pred}','{data}','{mest}')";
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 InsertCount = command.ExecuteNonQuery();
             }
-            catch
+            catch (Exception osh)
             {
                 //Если возникла ошибка, то запрос не вставит ни одной строки
                 InsertCount = 0;
+                MessageBox.Show($"Неповезло" + osh);
             }
             finally
             {
-                conn.Close();
                 //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
-                if (InsertCount !=0)
+                if (InsertCount != 0)
                 {
                     result = true;
                 }
+                conn.Close();
             }
             return result;
         }

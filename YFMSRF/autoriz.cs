@@ -42,6 +42,8 @@ namespace YFMSRF
             }
             reader.Close(); 
             conn.Close();
+            GetSotrydInfo();
+            GetZvanieinfo();
         }
 
         public autoriz()
@@ -96,11 +98,34 @@ namespace YFMSRF
         }
         public void GetSotrydInfo()
         {
-            string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where '{sotrudnik.auth_idZvan}'";
             conn.Open();
+            string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where id_sotrud='{Auth.auth_sotr}'";
             MySqlCommand command = new MySqlCommand(sql1, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                sotrudnik.auth_Ima = reader[0].ToString();
+                sotrudnik.auth_Fam = reader[1].ToString();
+                sotrudnik.auth_Otch = reader[2].ToString();
+                sotrudnik.auth_idZvan = reader[3].ToString();
+            }
+            reader.Close();
             conn.Close();
         }
+        public void GetZvanieinfo()
+        {
+            conn.Open();
+            string sql2 = $"SELECT zvanie FROM zvanie Where id_zvanie='{sotrudnik.auth_idZvan}'";
+            MySqlCommand command = new MySqlCommand(sql2, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                zvanie.auth_Zvan = reader[0].ToString();
+            }
+            reader.Close();
+            conn.Close();
+        }
+
     }
 }
 

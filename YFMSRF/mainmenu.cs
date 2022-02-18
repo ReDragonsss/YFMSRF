@@ -54,10 +54,11 @@ namespace YFMSRF
                 //Отображаем рабочую форму
                 this.Show();
                 //Вытаскиваем из класса поля в label'ы
-                metroLabel1.Text = Auth.auth_id;
-                metroLabel2.Text = Auth.auth_sotr;
+                metroLabel1.Text = sotrudnik.auth_Fam;
+                metroLabel2.Text = sotrudnik.auth_Ima;
                 ManagerRole(Auth.auth_role);
-                metroLabel3.Text = Auth.auth_login;
+                metroLabel3.Text = sotrudnik.auth_Otch;
+                metroLabel5.Text = zvanie.auth_Zvan;
             }
             else
             {
@@ -93,12 +94,12 @@ namespace YFMSRF
                 //Отображаем рабочую форму
                 this.Show();
                 //Вытаскиваем из класса поля в label'ы
-                metroLabel1.Text = Auth.auth_id;
-                metroLabel2.Text = Auth.auth_login;
+                metroLabel1.Text = sotrudnik.auth_Fam;
+                metroLabel2.Text = sotrudnik.auth_Ima;
                 ManagerRole(Auth.auth_role);
-                metroLabel3.Text = Auth.auth_sotr;
+                metroLabel3.Text = sotrudnik.auth_Otch;
+                metroLabel5.Text = zvanie.auth_Zvan;
             }
-
         }
 
         private void metroButton4_Click(object sender, EventArgs e)

@@ -47,9 +47,7 @@ namespace YFMSRF
             this.metroTextBox17 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox18 = new MetroFramework.Controls.MetroTextBox();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -615,21 +613,14 @@ namespace YFMSRF
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Постоянная ",
+            "Временная"});
             this.metroComboBox1.Location = new System.Drawing.Point(7, 76);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(225, 29);
             this.metroComboBox1.TabIndex = 19;
             this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(7, 397);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(225, 29);
-            this.metroComboBox2.TabIndex = 20;
-            this.metroComboBox2.UseSelectable = true;
             // 
             // metroLabel1
             // 
@@ -639,15 +630,6 @@ namespace YFMSRF
             this.metroLabel1.Size = new System.Drawing.Size(132, 19);
             this.metroLabel1.TabIndex = 21;
             this.metroLabel1.Text = "Вид прописки учета";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 375);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(187, 19);
-            this.metroLabel2.TabIndex = 22;
-            this.metroLabel2.Text = "Вид регистрационного учета";
             // 
             // metroTextBox10
             // 
@@ -704,8 +686,6 @@ namespace YFMSRF
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.groupBox2.Controls.Add(this.metroTextBox9);
             this.groupBox2.Controls.Add(this.metroLabel1);
-            this.groupBox2.Controls.Add(this.metroLabel2);
-            this.groupBox2.Controls.Add(this.metroComboBox2);
             this.groupBox2.Controls.Add(this.metroTextBox10);
             this.groupBox2.Controls.Add(this.metroComboBox1);
             this.groupBox2.Controls.Add(this.metroTextBox11);
@@ -718,7 +698,7 @@ namespace YFMSRF
             this.groupBox2.Controls.Add(this.metroTextBox15);
             this.groupBox2.Location = new System.Drawing.Point(267, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(238, 432);
+            this.groupBox2.Size = new System.Drawing.Size(238, 375);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Прописка";
@@ -937,9 +917,7 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroTextBox metroTextBox17;
         private MetroFramework.Controls.MetroTextBox metroTextBox18;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox metroTextBox10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

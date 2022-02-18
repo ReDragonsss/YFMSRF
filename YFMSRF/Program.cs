@@ -43,5 +43,9 @@ namespace YFMSRF
     {
         public static string auth_Zvan = null;// Зван
     }
+    static class Inostranci
+    {
+        public static string inostr_id = null;// хронит в сердце своем уникальный номер иностранца без визы 
+    }
 } 
 
