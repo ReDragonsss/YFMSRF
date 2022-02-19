@@ -18,12 +18,12 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-        public bool InsertComp(string spass, string npass, string dvidach, string pvidach, string ovidpass, string kpodraz,string strrojd, string godrojd, string vidpropis, string dataprop, string regpop, string gorprop, string naselpunkt, string ylica, string dom, string stroen, string kvart, string organ, string vidregistr)
+        public bool InsertComp(string spass, string npass, string dvidach, string pvidach, string norgan, string kpodraz,string strrojd, string godrojd, string naselpunkt, string vidprop, string dprop, string regprop, string gprop, string rnaselpunkt, string ylica, string dom, string stroen, string kvartira, string organych,string ikod)//spass npass dvidach pvidach ovidpass kpodraz strrojd godrojd vidpropis dataprop regpop gorprop naselpunkt ylica dom stroen kvart organ vidregistr ikod
         {
             bool result = false;
             int InsertCount = 0;
             conn.Open();
-            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{ovidpass}','{kpodraz}','{strrojd}','{godrojd}','{vidpropis}','{dataprop}','{regpop}','{gorprop}','{naselpunkt}','{ylica}','{dom}','{stroen}','{kvart}','{organ}','{vidregistr}')";
+            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta,Kod_inostr) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{norgan}','{kpodraz}','{strrojd}','{godrojd}','{naselpunkt}','{vidprop}','{dprop}','{regprop}','{gprop}','{rnaselpunkt}','{ylica}','{dom}','{stroen}','{kvartira}','{organych}','{ikod}')";
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);
@@ -79,7 +79,8 @@ namespace YFMSRF
             string p17 = metroTextBox17.Text;
             string p18 = metroTextBox18.Text;
             string p19 = metroTextBox10.Text;
-            InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19);
+            string p20 = Inostranci.inostr_id;
+            InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20);
         }
 
         private void metroButton2_Click(object sender, EventArgs e)

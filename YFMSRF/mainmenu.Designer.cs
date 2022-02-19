@@ -40,8 +40,8 @@ namespace YFMSRF
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -164,16 +164,6 @@ namespace YFMSRF
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.BackColor = System.Drawing.SystemColors.Control;
-            this.metroLabel4.Location = new System.Drawing.Point(6, 91);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel4.TabIndex = 12;
-            this.metroLabel4.Text = "Звание :";
-            // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
@@ -184,6 +174,16 @@ namespace YFMSRF
             this.metroLabel5.TabIndex = 15;
             this.metroLabel5.Text = "Звание";
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.BackColor = System.Drawing.SystemColors.Control;
+            this.metroLabel4.Location = new System.Drawing.Point(6, 91);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel4.TabIndex = 12;
+            this.metroLabel4.Text = "Звание :";
+            // 
             // metroButton6
             // 
             this.metroButton6.Location = new System.Drawing.Point(364, 168);
@@ -192,6 +192,7 @@ namespace YFMSRF
             this.metroButton6.TabIndex = 15;
             this.metroButton6.Text = "Отчет";
             this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
             // mainmenu
             // 

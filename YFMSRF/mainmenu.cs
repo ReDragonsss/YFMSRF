@@ -71,13 +71,6 @@ namespace YFMSRF
             otddeport f7 = new otddeport();
             f7.Show();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Test_Connect_Printer t = new Test_Connect_Printer();
-            t.Show();
-        }
-
         private void metroButton3_Click(object sender, EventArgs e)
         {
             createviz f3 = new createviz();
@@ -122,6 +115,12 @@ namespace YFMSRF
         private void metroButton5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            Test_Connect_Printer t = new Test_Connect_Printer();
+            t.Show();
         }
     }
 }

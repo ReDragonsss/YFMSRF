@@ -47,5 +47,5 @@ namespace YFMSRF
     {
         public static string inostr_id = null;// хронит в сердце своем уникальный номер иностранца без визы 
     }
-} 
+}
 
