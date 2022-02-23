@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
     public partial class otddeport : MetroFramework.Forms.MetroForm
     {
+        MySqlConnection conn;
         public otddeport()
         {
             InitializeComponent();
@@ -19,7 +21,53 @@ namespace YFMSRF
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
+            conn = new MySqlConnection(connStr);
+        }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            string p1 = metroTextBox1.Text;
+            string p2 = metroTextBox2.Text;
+            string p3 = metroTextBox3.Text;
+            string p4 = metroTextBox13.Text;
+            string p5 = metroTextBox12.Text;
+            string p6 = metroTextBox11.Text;
+            string p7 = metroTextBox10.Text;
+            string p8 = metroTextBox9.Text;
+            string p9 = metroDateTime1.Text;
+            string p10 = metroDateTime2.Text;
+            string p11 = metroTextBox8.Text;
+            string p12 = metroTextBox14.Text;
+            InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12);
+
+        }
+        public void InsertComp(string dolj, string fams, string inics, string specz, string graj, string ima, string fam, string otch, string datapod, string datapol, string obsto, string poloj)
+        {
+            bool result = false;
+            int InsertCount = 0;
+            conn.Open();
+            string sql = $"INSERT INTO nerazrehviezde (doljnost,famil_sotr,inicial_sotr,spec_zvan,grajdan,ima,fam,otch,data_pribit,data_podpisan,data_polych,obstoatel_osn,poloj_fed) VALUES ('{dolj}','{fams}','{inics}','{specz}','{graj}','{ima}','{fam}','{otch}','{datapod}','{datapol}','{obsto}','{poloj}',)";
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                InsertCount = command.ExecuteNonQuery();
+            }
+            catch (Exception osh)
+            {
+                //Если возникла ошибка, то запрос не вставит ни одной строки
+                InsertCount = 0;
+                MessageBox.Show($"Неповезло" + osh);
+            }
+            finally
+            {
+                //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
+                if (InsertCount != 0)
+                {
+                    result = true;
+                }
+                conn.Close();
+            }
         }
     }
 }

@@ -45,17 +45,15 @@ namespace YFMSRF
             GetSotrydInfo();
             GetZvanieinfo();
         }
-
         public autoriz()
         {
             InitializeComponent();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection(connStr);
+            metroTextBox3.Visible = false;
         }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM Auto WHERE login = @un and password= @up";
@@ -90,11 +88,6 @@ namespace YFMSRF
         private void metroTextBox2_TextChanged(object sender, EventArgs e)
         {
             metroTextBox3.Text = sha256(metroTextBox2.Text);
-        }
-
-        private void metroTextBox3_Click(object sender, EventArgs e)
-        {
-
         }
         public void GetSotrydInfo()
         {
