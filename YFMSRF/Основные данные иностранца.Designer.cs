@@ -256,7 +256,7 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(360, 248);
+            this.metroButton2.Location = new System.Drawing.Point(346, 248);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(75, 23);
             this.metroButton2.TabIndex = 14;
@@ -278,7 +278,7 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 278);
+            this.ClientSize = new System.Drawing.Size(429, 278);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);

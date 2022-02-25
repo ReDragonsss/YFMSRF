@@ -92,7 +92,7 @@ namespace YFMSRF
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(698, 8);
+            this.metroButton1.Location = new System.Drawing.Point(698, 5);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(103, 27);
             this.metroButton1.TabIndex = 1;
@@ -104,7 +104,7 @@ namespace YFMSRF
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(416, 8);
+            this.metroComboBox1.Location = new System.Drawing.Point(461, 5);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(220, 29);
             this.metroComboBox1.TabIndex = 2;

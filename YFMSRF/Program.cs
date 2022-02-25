@@ -19,33 +19,35 @@ namespace YFMSRF
             Application.Run(new mainmenu());
         }
     }
-    static class Auth
+    static class Auth// данные авторизации
     {
-        //Статичное поле, которое хранит значение статуса авторизации
-        public static bool auth = false;
-        //Статичное поле, которое хранит значения ID пользователя
-        public static string auth_id = null;
-        //Статичное поле, которое хранит значения ФИО пользователя
-        public static string auth_login = null;
-        //статик поле для данных сотрудника
-        public static string auth_sotr = null;
-        //Статичное поле, которое хранит количество привелегий пользователя
-        public static int auth_role = 0;
+        public static bool auth = false;//Статичное поле, которое хранит значение статуса авторизации
+        public static string auth_id = null;//Статичное поле, которое хранит значения ID пользователя
+        public static string auth_login = null;//Статичное поле, которое хранит значения ФИО пользователя
+        public static string auth_sotr = null;//статик поле для данных сотрудника
+        public static int auth_role = 0;//Статичное поле, которое хранит количество привелегий пользователя
     }
-    static class sotrudnik
+    static class sotrudnik// данные сотрудника
     {
         public static string auth_Ima = null;// Имя сотрудника
         public static string auth_Fam = null;// Фамилия
         public static string auth_Otch = null;// Отчество
         public static string auth_idZvan = null;// ИдЗван
     }
-    static class zvanie
+    static class zvanie//данные звания
     {
         public static string auth_Zvan = null;// Зван
     }
-    static class Inostranci
+    static class Inostranci//данные иностранца
     {
-        public static string inostr_id = null;// хронит в сердце своем уникальный номер иностранца без визы 
+        public static string inostr_id = null;// хранит в сердце своем уникальный номер иностранца без визы 
+        public static string inostr_ima = null; //Статичное поле, которое хранит значение имени
+        public static string inostr_fam = null; //Статичное поле, которое хранит значение фамилии
+        public static string inostr_otch = null; //Статичное поле, которое хранит значение отчества
+        public static string inostr_pass = null; //Статичное поле, которое хранит значение паспорта
+        public static string inostr_datar = null; //Статичное поле, которое хранит значение даты 
+        public static string inostr_pol = null; //Статичное поле, которое хранит значение пола
+        public static string inostr_grajd = null;//Статичное поле, которое хранит значение гражданства
     }
 }
 

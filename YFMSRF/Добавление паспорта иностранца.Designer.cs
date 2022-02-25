@@ -51,12 +51,6 @@ namespace YFMSRF
             this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroTextBox19 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox20 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox21 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox22 = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -703,151 +697,10 @@ namespace YFMSRF
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Прописка";
             // 
-            // metroTextBox19
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox19.CustomButton.Image = null;
-            this.metroTextBox19.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.metroTextBox19.CustomButton.Name = "";
-            this.metroTextBox19.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox19.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox19.CustomButton.TabIndex = 1;
-            this.metroTextBox19.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox19.CustomButton.UseSelectable = true;
-            this.metroTextBox19.CustomButton.Visible = false;
-            this.metroTextBox19.Lines = new string[] {
-        "Фио"};
-            this.metroTextBox19.Location = new System.Drawing.Point(513, 68);
-            this.metroTextBox19.MaxLength = 32767;
-            this.metroTextBox19.Name = "metroTextBox19";
-            this.metroTextBox19.PasswordChar = '\0';
-            this.metroTextBox19.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox19.SelectedText = "";
-            this.metroTextBox19.SelectionLength = 0;
-            this.metroTextBox19.SelectionStart = 0;
-            this.metroTextBox19.ShortcutsEnabled = true;
-            this.metroTextBox19.Size = new System.Drawing.Size(157, 23);
-            this.metroTextBox19.TabIndex = 31;
-            this.metroTextBox19.Text = "Фио";
-            this.metroTextBox19.UseSelectable = true;
-            this.metroTextBox19.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox19.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox20
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox20.CustomButton.Image = null;
-            this.metroTextBox20.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.metroTextBox20.CustomButton.Name = "";
-            this.metroTextBox20.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox20.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox20.CustomButton.TabIndex = 1;
-            this.metroTextBox20.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox20.CustomButton.UseSelectable = true;
-            this.metroTextBox20.CustomButton.Visible = false;
-            this.metroTextBox20.Lines = new string[0];
-            this.metroTextBox20.Location = new System.Drawing.Point(513, 190);
-            this.metroTextBox20.MaxLength = 32767;
-            this.metroTextBox20.Name = "metroTextBox20";
-            this.metroTextBox20.PasswordChar = '\0';
-            this.metroTextBox20.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox20.SelectedText = "";
-            this.metroTextBox20.SelectionLength = 0;
-            this.metroTextBox20.SelectionStart = 0;
-            this.metroTextBox20.ShortcutsEnabled = true;
-            this.metroTextBox20.Size = new System.Drawing.Size(157, 23);
-            this.metroTextBox20.TabIndex = 30;
-            this.metroTextBox20.UseSelectable = true;
-            this.metroTextBox20.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox20.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox21
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox21.CustomButton.Image = null;
-            this.metroTextBox21.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.metroTextBox21.CustomButton.Name = "";
-            this.metroTextBox21.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox21.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox21.CustomButton.TabIndex = 1;
-            this.metroTextBox21.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox21.CustomButton.UseSelectable = true;
-            this.metroTextBox21.CustomButton.Visible = false;
-            this.metroTextBox21.Lines = new string[0];
-            this.metroTextBox21.Location = new System.Drawing.Point(513, 161);
-            this.metroTextBox21.MaxLength = 32767;
-            this.metroTextBox21.Name = "metroTextBox21";
-            this.metroTextBox21.PasswordChar = '\0';
-            this.metroTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox21.SelectedText = "";
-            this.metroTextBox21.SelectionLength = 0;
-            this.metroTextBox21.SelectionStart = 0;
-            this.metroTextBox21.ShortcutsEnabled = true;
-            this.metroTextBox21.Size = new System.Drawing.Size(157, 23);
-            this.metroTextBox21.TabIndex = 29;
-            this.metroTextBox21.UseSelectable = true;
-            this.metroTextBox21.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox21.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox22
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox22.CustomButton.Image = null;
-            this.metroTextBox22.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.metroTextBox22.CustomButton.Name = "";
-            this.metroTextBox22.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox22.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox22.CustomButton.TabIndex = 1;
-            this.metroTextBox22.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox22.CustomButton.UseSelectable = true;
-            this.metroTextBox22.CustomButton.Visible = false;
-            this.metroTextBox22.Lines = new string[0];
-            this.metroTextBox22.Location = new System.Drawing.Point(513, 132);
-            this.metroTextBox22.MaxLength = 32767;
-            this.metroTextBox22.Name = "metroTextBox22";
-            this.metroTextBox22.PasswordChar = '\0';
-            this.metroTextBox22.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox22.SelectedText = "";
-            this.metroTextBox22.SelectionLength = 0;
-            this.metroTextBox22.SelectionStart = 0;
-            this.metroTextBox22.ShortcutsEnabled = true;
-            this.metroTextBox22.Size = new System.Drawing.Size(157, 23);
-            this.metroTextBox22.TabIndex = 28;
-            this.metroTextBox22.UseSelectable = true;
-            this.metroTextBox22.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox22.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Location = new System.Drawing.Point(513, 97);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(157, 29);
-            this.metroComboBox3.TabIndex = 27;
-            this.metroComboBox3.UseSelectable = true;
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(595, 39);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(75, 23);
-            this.metroButton3.TabIndex = 26;
-            this.metroButton3.Text = "Поиск";
-            this.metroButton3.UseSelectable = true;
-            // 
             // metroButton1
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.Location = new System.Drawing.Point(44, 411);
+            this.metroButton1.Location = new System.Drawing.Point(44, 382);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(187, 42);
             this.metroButton1.TabIndex = 32;
@@ -857,7 +710,7 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(575, 431);
+            this.metroButton2.Location = new System.Drawing.Point(410, 401);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(95, 23);
             this.metroButton2.TabIndex = 33;
@@ -867,7 +720,7 @@ namespace YFMSRF
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(16, 379);
+            this.progressBar1.Location = new System.Drawing.Point(23, 287);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(238, 26);
             this.progressBar1.TabIndex = 34;
@@ -876,16 +729,10 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 477);
+            this.ClientSize = new System.Drawing.Size(515, 435);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.metroTextBox19);
-            this.Controls.Add(this.metroTextBox20);
-            this.Controls.Add(this.metroTextBox21);
-            this.Controls.Add(this.metroTextBox22);
-            this.Controls.Add(this.metroComboBox3);
-            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form6";
@@ -921,12 +768,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroTextBox metroTextBox10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox19;
-        private MetroFramework.Controls.MetroTextBox metroTextBox20;
-        private MetroFramework.Controls.MetroTextBox metroTextBox21;
-        private MetroFramework.Controls.MetroTextBox metroTextBox22;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.ProgressBar progressBar1;

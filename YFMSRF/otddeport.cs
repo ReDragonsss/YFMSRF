@@ -30,24 +30,25 @@ namespace YFMSRF
             string p1 = metroTextBox1.Text;
             string p2 = metroTextBox2.Text;
             string p3 = metroTextBox3.Text;
-            string p4 = metroTextBox13.Text;
-            string p5 = metroTextBox12.Text;
-            string p6 = metroTextBox11.Text;
-            string p7 = metroTextBox10.Text;
-            string p8 = metroTextBox9.Text;
-            string p9 = metroDateTime1.Text;
-            string p10 = metroDateTime2.Text;
-            string p11 = metroTextBox8.Text;
-            string p12 = metroTextBox14.Text;
-            InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12);
+            string p4 = metroTextBox4.Text;
+            string p5 = metroTextBox13.Text;
+            string p6 = metroTextBox12.Text;
+            string p7 = metroTextBox11.Text;
+            string p8 = metroTextBox10.Text;
+            string p9 = metroTextBox9.Text;
+            string p10 = metroTextBox5.Text;
+            string p11 = metroTextBox6.Text;
+            string p12 = metroTextBox8.Text;
+            string p13 = metroTextBox14.Text;
+            InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13);
 
         }
-        public void InsertComp(string dolj, string fams, string inics, string specz, string graj, string ima, string fam, string otch, string datapod, string datapol, string obsto, string poloj)
+        public bool InsertComp(string dolj, string fams, string inics, string specz, string graj, string ima, string fam, string otch, string data_pribitstring,string datapod, string datapol, string obsto, string poloj)
         {
             bool result = false;
             int InsertCount = 0;
             conn.Open();
-            string sql = $"INSERT INTO nerazrehviezde (doljnost,famil_sotr,inicial_sotr,spec_zvan,grajdan,ima,fam,otch,data_pribit,data_podpisan,data_polych,obstoatel_osn,poloj_fed) VALUES ('{dolj}','{fams}','{inics}','{specz}','{graj}','{ima}','{fam}','{otch}','{datapod}','{datapol}','{obsto}','{poloj}',)";
+            string sql = $"INSERT INTO nerazrehviezde (doljnost, famil_sotr, inicial_sotr, spec_zvan, grajdan, ima, fam, otch, data_pribit, data_podpisan, data_polych, obstoatel_osn, poloj_fed) VALUES ('{dolj}','{fams}','{inics}','{specz}','{graj}','{ima}','{fam}','{otch}','{data_pribitstring}','{datapod}','{datapol}','{obsto}','{poloj}')";
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);
@@ -68,6 +69,7 @@ namespace YFMSRF
                 }
                 conn.Close();
             }
+            return result;
         }
     }
 }

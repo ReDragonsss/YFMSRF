@@ -21,26 +21,26 @@ namespace YFMSRF
             switch (role)
             {
                 case 1://отдел депортации
-                    metroButton1.Enabled = true;
-                    metroButton2.Enabled = true;
-                    metroButton3.Enabled = false;
+                    metroButton1.Visible = true;
+                    metroButton2.Visible = true;
+                    metroButton3.Visible = false;
                     break;
                 case 2:// разрешительно-визовой работы
-                    metroButton1.Enabled = false;
-                    metroButton2.Enabled = false;
-                    metroButton3.Enabled = true;
+                    metroButton1.Visible = false;
+                    metroButton2.Visible = false;
+                    metroButton3.Visible = true;
                     break;
                 case 3:// Начальство 
-                    metroButton1.Enabled = false;
-                    metroButton2.Enabled = false;
-                    metroButton3.Enabled = false;
+                    metroButton1.Visible = false;
+                    metroButton2.Visible = false;
+                    metroButton3.Visible = false;
                     break;
                 default: //off
                     metroLabel1.Text="Неизвестный пользователь";
                     metroLabel2.Text="Неизвестный пользователь";
-                    metroButton1.Enabled = false;
-                    metroButton2.Enabled = false;
-                    metroButton3.Enabled = false;
+                    metroButton1.Visible = false;
+                    metroButton2.Visible = false;
+                    metroButton3.Visible = false;
                     break;
             }
         }
@@ -121,6 +121,11 @@ namespace YFMSRF
         {
             Test_Connect_Printer t = new Test_Connect_Printer();
             t.Show();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("На время заморожено");
         }
     }
 }

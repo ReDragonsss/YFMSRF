@@ -67,10 +67,11 @@ namespace YFMSRF
             this.metroButton2.Text = "Об утверждении порядка депортации иностранных граждан\r\n и лиц без гражданства РФ " +
     "\r\nи его терриальным органам";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(12, 178);
+            this.metroButton3.Location = new System.Drawing.Point(12, 42);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(346, 50);
             this.metroButton3.TabIndex = 4;
