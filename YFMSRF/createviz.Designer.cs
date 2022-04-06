@@ -472,6 +472,8 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(605, 380);
+            this.MinimumSize = new System.Drawing.Size(605, 380);
             this.Name = "createviz";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
@@ -492,7 +494,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroTextBox metroTextBox6;
         private MetroFramework.Controls.MetroTextBox metroTextBox8;
@@ -503,5 +504,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox7;
         private MetroFramework.Controls.MetroButton metroButton6;
+        public MetroFramework.Controls.MetroTextBox metroTextBox4;
     }
 }

@@ -13,8 +13,6 @@ namespace YFMSRF
 {
     public partial class autoriz : MetroFramework.Forms.MetroForm
     {
-        string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-        MySqlConnection conn;
         static string sha256(string randomString)
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
@@ -28,9 +26,9 @@ namespace YFMSRF
         }
         public void GetUserInfo(string login)
         {
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql = $"SELECT * FROM Auto WHERE login='{login}'";
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -39,8 +37,8 @@ namespace YFMSRF
                 Auth.auth_role = Convert.ToInt32(reader[3].ToString());
                 Auth.auth_sotr= reader[4].ToString();
             }
-            reader.Close(); 
-            conn.Close();
+            reader.Close();
+            PCS.ControlData.conn.Close();
             GetSotrydInfo();
             GetZvanieinfo();
         }
@@ -50,23 +48,22 @@ namespace YFMSRF
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            conn = new MySqlConnection(connStr);
             metroTextBox3.Visible = false;
         }
         private void metroButton1_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM Auto WHERE login = @un and password= @up";
-            conn.Open();
+            PCS.ControlData.conn.Open();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             command.Parameters.Add("@un", MySqlDbType.VarChar, 25);
             command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
             command.Parameters["@un"].Value = metroTextBox1.Text;
             command.Parameters["@up"].Value = sha256(metroTextBox2.Text);
             adapter.SelectCommand = command;
             adapter.Fill(table);
-            conn.Close();
+            PCS.ControlData.conn.Close();
             if (table.Rows.Count > 0)
             {
                 Auth.auth = true;
@@ -90,9 +87,9 @@ namespace YFMSRF
         }
         public void GetSotrydInfo()
         {
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where id_sotrud='{Auth.auth_sotr}'";
-            MySqlCommand command = new MySqlCommand(sql1, conn);
+            MySqlCommand command = new MySqlCommand(sql1, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -102,20 +99,20 @@ namespace YFMSRF
                 sotrudnik.auth_idZvan = reader[3].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
         public void GetZvanieinfo()
         {
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql2 = $"SELECT zvanie FROM zvanie Where id_zvanie='{sotrudnik.auth_idZvan}'";
-            MySqlCommand command = new MySqlCommand(sql2, conn);
+            MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 zvanie.auth_Zvan = reader[0].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
     }
 }

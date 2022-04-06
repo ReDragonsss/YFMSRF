@@ -13,7 +13,6 @@ namespace YFMSRF
 {
     public partial class otddeport : MetroFramework.Forms.MetroForm
     {
-        MySqlConnection conn;
         public otddeport()
         {
             InitializeComponent();
@@ -21,8 +20,6 @@ namespace YFMSRF
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-            conn = new MySqlConnection(connStr);
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -47,11 +44,11 @@ namespace YFMSRF
         {
             bool result = false;
             int InsertCount = 0;
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql = $"INSERT INTO nerazrehviezde (doljnost, famil_sotr, inicial_sotr, spec_zvan, grajdan, ima, fam, otch, data_pribit, data_podpisan, data_polych, obstoatel_osn, poloj_fed) VALUES ('{dolj}','{fams}','{inics}','{specz}','{graj}','{ima}','{fam}','{otch}','{data_pribitstring}','{datapod}','{datapol}','{obsto}','{poloj}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -67,7 +64,7 @@ namespace YFMSRF
                 {
                     result = true;
                 }
-                conn.Close();
+                PCS.ControlData.conn.Close();
             }
             return result;
         }

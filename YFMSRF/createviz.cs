@@ -13,7 +13,6 @@ namespace YFMSRF
 {
     public partial class createviz : MetroFramework.Forms.MetroForm
     {
-        MySqlConnection conn;
         public createviz()
         {
             InitializeComponent();
@@ -21,8 +20,6 @@ namespace YFMSRF
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-            conn = new MySqlConnection(connStr);
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -64,21 +61,21 @@ namespace YFMSRF
         }
         public void Getinfo1()
         {
-            conn.Open();
-            string sql = $"SELECT grajdanstvo FROM vizov_anketa Where id_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            PCS.ControlData.conn.Open();
+            string sql = $"SELECT grajdanstvo FROM vizov_anketa Where kod_inostr='{Inostranci.inostr_id}'";
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_grajd = reader[0].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
         public void Getinfo2()
         {
-            string sql = $"SELECT fam,name,otch,pol,data_rojdenia FROM Osnov_dannie_inostr Where id_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            string sql = $"SELECT fam,name,otch,pol,data_rojdenia FROM Osnov_dannie_inostr Where kod_inostr='{Inostranci.inostr_id}'";
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -89,30 +86,30 @@ namespace YFMSRF
                 Inostranci.inostr_datar = reader[4].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
         public void Getinfo3()
         {
-            string sql = $"SELECT nomer_pass FROM pass Where id_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            string sql = $"SELECT nomer_pass FROM pass Where kod_inostr='{Inostranci.inostr_id}'";
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_pass = reader[0].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
         
           public bool Insertin(string datav, string nasrock, string grajd, string fio, string nomberp, string datar, string pol, string prinimo, string dopols)
           {
             bool result = false;
             int InsertCount = 0;
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql = $"INSERT INTO viza (data_vidachi,na_srock,grajdanstv,fio,nomber_pass,data_rojd,pol,prinim_organiz,dopol_sveden) VALUES ('{datav}','{nasrock}','{grajd}','{fio}','{nomberp}','{datar}','{pol}','{prinimo}','{dopols}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -128,7 +125,7 @@ namespace YFMSRF
                 {
                     result = true;
                 }
-                conn.Close();
+                PCS.ControlData.conn.Close();
             }
             return result;
           }

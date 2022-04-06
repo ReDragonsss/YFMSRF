@@ -17,23 +17,21 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-        MySqlConnection conn;
         public string avtosalon = "Comp1";
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
-        private BindingSource bSource = new BindingSource();
+        protected BindingSource bSource;
         //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
         //модель независимо от источника данных.DataSet представляет полный набор данных, включая таблицы, содержащие, упорядочивающие 
         //Представляет одну таблицу данных в памяти.
-        private DataTable table = new DataTable();
+        private DataTable table;
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
         string id_selected_rows = null;
         private void Form8_Load(object sender, EventArgs e)
         {
-            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-            conn=new MySqlConnection(connStr);
+        
         }
         public void GetSelectedIDString()
         {
@@ -46,13 +44,13 @@ namespace YFMSRF
         }
         public bool DeleteInfo()// Запрос на удаление
         {
-            conn.Open();
+            PCS.ControlData.conn.Open();
             int InsertCount = 0;
             bool result = false;
             string SqlDelete = $"DELETE FROM {avtosalon} WHERE kod_inostr ='" + id_selected_rows + "'";
             try
             {
-                MySqlCommand command = new MySqlCommand(SqlDelete, conn);
+                MySqlCommand command = new MySqlCommand(SqlDelete, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch
@@ -62,7 +60,7 @@ namespace YFMSRF
             }
             finally
             {
-                conn.Close();
+                PCS.ControlData.conn.Close();
                 //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
                 if (InsertCount != 0)
                 {
@@ -75,17 +73,21 @@ namespace YFMSRF
         public void reload_list()
         {
             //Чистим виртуальную таблицу
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
+            if(table != null)
+            {
+                table.Clear();
+                dataGridView1.DataSource = bSource;
+            }
         }
-        public void GetListUsers()
+        public void GetListUsers(string commandStr)
         {
+            table = new DataTable();
+            bSource = new BindingSource();
             //Запрос для вывода строк в БД
-            string commandStr = $"SELECT fam AS'Фамилия',name,otchestv,pol,data_rojdenia,mesto_rojden FROM Osnov_dannie_inostr";
             //Открываем соединение
-            conn.Open();
+            PCS.ControlData.conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(commandStr, conn);
+            MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица
@@ -93,41 +95,7 @@ namespace YFMSRF
             //Указываем, что источником данных ДатаГрида является bindingsource 
             dataGridView1.DataSource = bSource;
             //Закрываем соединение
-            conn.Close();
-        }
-        public void GetListUsers1()
-        {
-            //Запрос для вывода строк в БД
-            string commandStr = $"SELECT doljnost,famil_sotr,inicial_sotr,spec_zvan,grajdan,ima,fam,otch,obstoatel_osn,poloj_fed FROM nerazrehviezde";
-            //Открываем соединение
-            conn.Open();
-            //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(commandStr, conn);
-            //Заполняем таблицу записями из БД
-            MyDA.Fill(table);
-            //Указываем, что источником данных в bindingsource является заполненная выше таблица
-            bSource.DataSource = table;
-            //Указываем, что источником данных ДатаГрида является bindingsource 
-            dataGridView1.DataSource = bSource;
-            //Закрываем соединение
-            conn.Close();
-        }
-        public void GetListUsers2()
-        {
-            //Запрос для вывода строк в БД
-            string commandStr = $"SELECT data_vidachi,na_srock,grajdanstv,fio,nomber_pass,data_rojd,pol,prinim_organiz,dopol_sveden FROM viza";
-            //Открываем соединение
-            conn.Open();
-            //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(commandStr, conn);
-            //Заполняем таблицу записями из БД
-            MyDA.Fill(table);
-            //Указываем, что источником данных в bindingsource является заполненная выше таблица
-            bSource.DataSource = table;
-            //Указываем, что источником данных ДатаГрида является bindingsource 
-            dataGridView1.DataSource = bSource;
-            //Закрываем соединение
-            conn.Close();
+            PCS.ControlData.conn.Close();
         }
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -139,21 +107,12 @@ namespace YFMSRF
                 GetSelectedIDString();
             }
         }
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            // доступ высшее начальство
-            // доступ отдел по вопросам гражданства
-            // доступ отдел по вопросам депортации
-            reload_list();
-            GetListUsers();
-        }
-
         private void metroButton3_Click(object sender, EventArgs e)
         {
             // доступ высшее начальство
             // доступ отдел по вопросам депортации
             reload_list();
-            GetListUsers1();
+            GetListUsers("SELECT fam,ima,otech,data_rojden,grajdanstvo,seria_and_nomer_pasporta FROM deportiruuchi");
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -161,9 +120,9 @@ namespace YFMSRF
             // доступ высшее начальство
             // доступ отдел по вопросам гражданства
             reload_list();
-            GetListUsers2();
+            GetListUsers($"SELECT fam AS'Фамилия',name,otchestv,pol,data_rojdenia,mesto_rojden FROM Osnov_dannie_inostr");
         }
-
+        // а где 2-ая кнопка
         private void metroButton6_Click(object sender, EventArgs e)
         {
             reload_list();

@@ -13,7 +13,6 @@ namespace YFMSRF
 {
     public partial class Form6 : MetroFramework.Forms.MetroForm
     {
-        MySqlConnection conn;
         public Form6()
         {
             InitializeComponent();
@@ -22,11 +21,11 @@ namespace YFMSRF
         {
             bool result = false;
             int InsertCount = 0;
-            conn.Open();
-            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta,Kod_inostr) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{norgan}','{kpodraz}','{strrojd}','{godrojd}','{naselpunkt}','{vidprop}','{dprop}','{regprop}','{gprop}','{rnaselpunkt}','{ylica}','{dom}','{stroen}','{kvartira}','{organych}','{ikod}')";
+            PCS.ControlData.conn.Open();
+            string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta,kod_inostr) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{norgan}','{kpodraz}','{strrojd}','{godrojd}','{naselpunkt}','{vidprop}','{dprop}','{regprop}','{gprop}','{rnaselpunkt}','{ylica}','{dom}','{stroen}','{kvartira}','{organych}','{ikod}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -42,15 +41,13 @@ namespace YFMSRF
                 {
                     result = true;
                 }
-                conn.Close();
+                PCS.ControlData.conn.Close();
             }
             return result;
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-            conn=new MySqlConnection(connStr);
         }
 
         private void metroTextBox15_Click(object sender, EventArgs e)

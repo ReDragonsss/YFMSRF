@@ -561,6 +561,8 @@ namespace YFMSRF
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroTextBox8);
+            this.MaximumSize = new System.Drawing.Size(800, 316);
+            this.MinimumSize = new System.Drawing.Size(800, 316);
             this.Name = "otddeport";
             this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Form7_Load);

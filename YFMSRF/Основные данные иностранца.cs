@@ -17,17 +17,16 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-        MySqlConnection conn;
 
         public bool InsertComp(string famil, string name, string otcestv, string pol, string rojd, string mestro)
         {
             bool result = false;
             int InsertCount = 0;
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql = $"INSERT INTO Osnov_dannie_inostr (fam, name, otchestv, pol, data_rojdenia, mesto_rojden) VALUES ('{famil}','{name}','{otcestv}','{pol}','{rojd}','{mestro}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -43,15 +42,13 @@ namespace YFMSRF
                 {
                     result = true;
                 }
-                conn.Close();
+                PCS.ControlData.conn.Close();
             }
             return result;
         }
 
         private void Form4_Load(object sender, EventArgs e)
             {
-                string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-                conn=new MySqlConnection(connStr);
             }
 
         private void metroTextBox3_Click(object sender, EventArgs e)
@@ -75,14 +72,14 @@ namespace YFMSRF
         {
                 try
                 {
-                    conn.Open();
+                    PCS.ControlData.conn.Open();
                     MessageBox.Show("База данных работает стабильно");
-                    conn.Close();
+                    PCS.ControlData.conn.Close();
                 }
                 catch (Exception osh)
                 {
                     MessageBox.Show("Произошла ошибка"+ osh);
-                    conn.Close();
+                    PCS.ControlData.conn.Close();
                 }
         }
         private void metroButton2_Click(object sender, EventArgs e)
@@ -91,17 +88,23 @@ namespace YFMSRF
         }
         public void Getinfo()
         {
-            string o = metroTextBox1.Text; 
-            conn.Open();
+            string o = metroTextBox1.Text;
+            PCS.ControlData.conn.Open();
             string sql2 = $"SELECT kod_inostr FROM Osnov_dannie_inostr Where fam='{o}'";
-            MySqlCommand command = new MySqlCommand(sql2, conn);
+            MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_id = reader[0].ToString();
             }
             reader.Close();
-            conn.Close();
+            PCS.ControlData.conn.Close();
+        }
+
+        private void metroTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            createviz viz = new createviz();
+            viz.metroTextBox4.Text = metroTextBox1.Text;
         }
     }
 }

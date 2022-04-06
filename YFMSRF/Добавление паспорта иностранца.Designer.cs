@@ -53,7 +53,6 @@ namespace YFMSRF
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -718,23 +717,17 @@ namespace YFMSRF
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(23, 287);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(238, 26);
-            this.progressBar1.TabIndex = 34;
-            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 435);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(515, 435);
+            this.MinimumSize = new System.Drawing.Size(515, 435);
             this.Name = "Form6";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.groupBox1.ResumeLayout(false);
@@ -770,6 +763,5 @@ namespace YFMSRF
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

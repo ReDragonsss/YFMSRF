@@ -64,6 +64,7 @@
     <Compile Include="BazaDan.Designer.cs">
       <DependentUpon>BazaDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PCS\ControlData.cs" />
     <Compile Include="TechHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +77,7 @@
     <Compile Include="Test_Connect_Printer.Designer.cs">
       <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Для сотрудников.cs" />
+    <Compile Include="PCS\Для сотрудников.cs" />
     <Compile Include="mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>

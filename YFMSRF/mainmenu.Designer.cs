@@ -191,7 +191,7 @@ namespace YFMSRF
             this.metroButton6.Name = "metroButton6";
             this.metroButton6.Size = new System.Drawing.Size(165, 23);
             this.metroButton6.TabIndex = 15;
-            this.metroButton6.Text = "Отчет";
+            this.metroButton6.Text = "Архивация";
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
@@ -210,6 +210,8 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MaximumSize = new System.Drawing.Size(749, 264);
+            this.MinimumSize = new System.Drawing.Size(749, 264);
             this.Name = "mainmenu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

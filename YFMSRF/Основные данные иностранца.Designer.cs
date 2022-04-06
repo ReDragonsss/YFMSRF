@@ -82,6 +82,7 @@ namespace YFMSRF
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.TextChanged += new System.EventHandler(this.metroTextBox1_TextChanged);
             // 
             // metroTextBox2
             // 
@@ -289,6 +290,8 @@ namespace YFMSRF
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(429, 278);
+            this.MinimumSize = new System.Drawing.Size(429, 278);
             this.Name = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);

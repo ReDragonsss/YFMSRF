@@ -64,7 +64,7 @@ namespace YFMSRF
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[] {
         "Страна рождения"};
-            this.metroTextBox1.Location = new System.Drawing.Point(11, 20);
+            this.metroTextBox1.Location = new System.Drawing.Point(11, 22);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -96,7 +96,7 @@ namespace YFMSRF
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[] {
         "Гражданство на данный момент"};
-            this.metroTextBox2.Location = new System.Drawing.Point(11, 49);
+            this.metroTextBox2.Location = new System.Drawing.Point(11, 51);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -128,7 +128,7 @@ namespace YFMSRF
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[] {
         "Семейное положение"};
-            this.metroTextBox3.Location = new System.Drawing.Point(11, 78);
+            this.metroTextBox3.Location = new System.Drawing.Point(11, 80);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -160,7 +160,7 @@ namespace YFMSRF
             this.metroTextBox4.CustomButton.Visible = false;
             this.metroTextBox4.Lines = new string[] {
         "Номер заграничного паспорта"};
-            this.metroTextBox4.Location = new System.Drawing.Point(11, 158);
+            this.metroTextBox4.Location = new System.Drawing.Point(11, 160);
             this.metroTextBox4.MaxLength = 32767;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
@@ -192,7 +192,7 @@ namespace YFMSRF
             this.metroTextBox5.CustomButton.Visible = false;
             this.metroTextBox5.Lines = new string[] {
         "Код государства"};
-            this.metroTextBox5.Location = new System.Drawing.Point(11, 187);
+            this.metroTextBox5.Location = new System.Drawing.Point(11, 189);
             this.metroTextBox5.MaxLength = 32767;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
@@ -224,7 +224,7 @@ namespace YFMSRF
             this.metroTextBox6.CustomButton.Visible = false;
             this.metroTextBox6.Lines = new string[] {
         "Домашний адрес"};
-            this.metroTextBox6.Location = new System.Drawing.Point(11, 216);
+            this.metroTextBox6.Location = new System.Drawing.Point(11, 218);
             this.metroTextBox6.MaxLength = 32767;
             this.metroTextBox6.Name = "metroTextBox6";
             this.metroTextBox6.PasswordChar = '\0';
@@ -256,7 +256,7 @@ namespace YFMSRF
             this.metroTextBox7.CustomButton.Visible = false;
             this.metroTextBox7.Lines = new string[] {
         "Срок действия заграничного паспорта"};
-            this.metroTextBox7.Location = new System.Drawing.Point(11, 245);
+            this.metroTextBox7.Location = new System.Drawing.Point(11, 247);
             this.metroTextBox7.MaxLength = 32767;
             this.metroTextBox7.Name = "metroTextBox7";
             this.metroTextBox7.PasswordChar = '\0';
@@ -288,7 +288,7 @@ namespace YFMSRF
             this.metroTextBox8.CustomButton.Visible = false;
             this.metroTextBox8.Lines = new string[] {
         "Профессиональная дейтельность"};
-            this.metroTextBox8.Location = new System.Drawing.Point(11, 274);
+            this.metroTextBox8.Location = new System.Drawing.Point(11, 276);
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
@@ -320,7 +320,7 @@ namespace YFMSRF
             this.metroTextBox9.CustomButton.Visible = false;
             this.metroTextBox9.Lines = new string[] {
         "Цель пребывания"};
-            this.metroTextBox9.Location = new System.Drawing.Point(11, 303);
+            this.metroTextBox9.Location = new System.Drawing.Point(11, 305);
             this.metroTextBox9.MaxLength = 32767;
             this.metroTextBox9.Name = "metroTextBox9";
             this.metroTextBox9.PasswordChar = '\0';
@@ -352,7 +352,7 @@ namespace YFMSRF
             this.metroTextBox10.CustomButton.Visible = false;
             this.metroTextBox10.Lines = new string[] {
         "Дата первого Въезда/Выезда"};
-            this.metroTextBox10.Location = new System.Drawing.Point(11, 386);
+            this.metroTextBox10.Location = new System.Drawing.Point(11, 388);
             this.metroTextBox10.MaxLength = 32767;
             this.metroTextBox10.Name = "metroTextBox10";
             this.metroTextBox10.PasswordChar = '\0';
@@ -384,7 +384,7 @@ namespace YFMSRF
             this.metroTextBox11.CustomButton.Visible = false;
             this.metroTextBox11.Lines = new string[] {
         "Место подписания визы"};
-            this.metroTextBox11.Location = new System.Drawing.Point(11, 415);
+            this.metroTextBox11.Location = new System.Drawing.Point(11, 417);
             this.metroTextBox11.MaxLength = 32767;
             this.metroTextBox11.Name = "metroTextBox11";
             this.metroTextBox11.PasswordChar = '\0';
@@ -407,7 +407,7 @@ namespace YFMSRF
             this.metroComboBox1.Items.AddRange(new object[] {
             "Стандартный",
             "Биометрический"});
-            this.metroComboBox1.Location = new System.Drawing.Point(11, 123);
+            this.metroComboBox1.Location = new System.Drawing.Point(11, 125);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(197, 29);
             this.metroComboBox1.TabIndex = 11;
@@ -420,7 +420,7 @@ namespace YFMSRF
             this.metroComboBox2.Items.AddRange(new object[] {
             "Да",
             "Нет"});
-            this.metroComboBox2.Location = new System.Drawing.Point(11, 351);
+            this.metroComboBox2.Location = new System.Drawing.Point(11, 353);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(197, 29);
             this.metroComboBox2.TabIndex = 12;
@@ -449,7 +449,7 @@ namespace YFMSRF
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(11, 104);
+            this.metroLabel1.Location = new System.Drawing.Point(11, 106);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(182, 19);
             this.metroLabel1.TabIndex = 15;
@@ -458,7 +458,7 @@ namespace YFMSRF
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(26, 329);
+            this.metroLabel2.Location = new System.Drawing.Point(26, 331);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(153, 19);
             this.metroLabel2.TabIndex = 16;
@@ -486,6 +486,8 @@ namespace YFMSRF
             this.Controls.Add(this.metroTextBox3);
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
+            this.MaximumSize = new System.Drawing.Size(228, 502);
+            this.MinimumSize = new System.Drawing.Size(228, 502);
             this.Name = "Form5";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);

@@ -17,22 +17,19 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-        MySqlConnection conn;
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            string connStr = "server=caseum.ru;port=33333;user=st_2_21_19;database=st_2_21_19;password=30518003";
-            conn=new MySqlConnection(connStr);
         }
         public bool InsertComp(string strana,string grad, string fam, string vid, string num, string kod, string home, string srok, string proff, string cel, string pred, string data, string mest, string ikod)//strana grad fam vid num kod home srok proff cel pred data mest
         { 
             bool result = false;
             int InsertCount = 0;
-            conn.Open();
+            PCS.ControlData.conn.Open();
             string sql = $"INSERT INTO vizov_anketa (strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,srok_zagran_pass,kod_gosydarstv,home_adress,profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi,kod_inostr) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{kod}','{home}','{srok}','{proff}','{cel}','{pred}','{data}','{mest}','{ikod}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -48,7 +45,7 @@ namespace YFMSRF
                 {
                     result = true;
                 }
-                conn.Close();
+                PCS.ControlData.conn.Close();
             }
             return result;
         }

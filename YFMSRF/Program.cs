@@ -19,7 +19,7 @@ namespace YFMSRF
             Application.Run(new mainmenu());
         }
     }
-    static class Auth// данные авторизации
+    public static class Auth// данные авторизации
     {
         public static bool auth = false;//Статичное поле, которое хранит значение статуса авторизации
         public static string auth_id = null;//Статичное поле, которое хранит значения ID пользователя
