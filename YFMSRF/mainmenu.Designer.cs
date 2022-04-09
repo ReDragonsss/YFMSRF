@@ -30,7 +30,6 @@ namespace YFMSRF
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -56,18 +55,6 @@ namespace YFMSRF
             this.label1.TabIndex = 1;
             this.label1.Text = "Изменить пользователя";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton2.Location = new System.Drawing.Point(12, 104);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(346, 68);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Об утверждении порядка депортации иностранных граждан\r\n и лиц без гражданства РФ " +
-    "\r\nи его терриальным органам";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton3
             // 
@@ -207,7 +194,6 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroButton3);
-            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximumSize = new System.Drawing.Size(749, 264);
@@ -224,7 +210,6 @@ namespace YFMSRF
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
