@@ -99,7 +99,7 @@ namespace YFMSRF
             // 
             // metroButton4
             // 
-            this.metroButton4.Location = new System.Drawing.Point(567, 168);
+            this.metroButton4.Location = new System.Drawing.Point(567, 160);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(163, 23);
             this.metroButton4.TabIndex = 9;
@@ -109,7 +109,7 @@ namespace YFMSRF
             // 
             // metroButton5
             // 
-            this.metroButton5.Location = new System.Drawing.Point(627, 224);
+            this.metroButton5.Location = new System.Drawing.Point(627, 228);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(103, 34);
             this.metroButton5.TabIndex = 10;
@@ -131,7 +131,7 @@ namespace YFMSRF
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 242);
+            this.label2.Location = new System.Drawing.Point(9, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 16);
             this.label2.TabIndex = 13;
@@ -140,13 +140,13 @@ namespace YFMSRF
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.metroLabel5);
             this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.metroLabel3);
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.metroLabel1);
-            this.groupBox1.Location = new System.Drawing.Point(364, 42);
+            this.groupBox1.Location = new System.Drawing.Point(364, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(366, 120);
             this.groupBox1.TabIndex = 14;
@@ -156,7 +156,7 @@ namespace YFMSRF
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.SystemColors.Control;
-            this.metroLabel5.Location = new System.Drawing.Point(73, 91);
+            this.metroLabel5.Location = new System.Drawing.Point(71, 91);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(54, 19);
             this.metroLabel5.TabIndex = 15;
@@ -174,7 +174,7 @@ namespace YFMSRF
             // 
             // metroButton6
             // 
-            this.metroButton6.Location = new System.Drawing.Point(364, 168);
+            this.metroButton6.Location = new System.Drawing.Point(364, 160);
             this.metroButton6.Name = "metroButton6";
             this.metroButton6.Size = new System.Drawing.Size(165, 23);
             this.metroButton6.TabIndex = 15;
