@@ -50,7 +50,9 @@ namespace YFMSRF
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -449,6 +451,15 @@ namespace YFMSRF
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::YFMSRF.Properties.Resources.gerb;
+            this.pictureBox1.Location = new System.Drawing.Point(75, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(462, 282);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // createviz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,11 +483,13 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(605, 380);
             this.MinimumSize = new System.Drawing.Size(605, 380);
             this.Name = "createviz";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,5 +518,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroTextBox metroTextBox7;
         private MetroFramework.Controls.MetroButton metroButton6;
         public MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

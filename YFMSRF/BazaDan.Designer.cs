@@ -32,7 +32,6 @@ namespace YFMSRF
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButton8 = new MetroFramework.Controls.MetroButton();
-            this.metroButton7 = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
@@ -57,7 +56,6 @@ namespace YFMSRF
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.metroButton8);
-            this.groupBox1.Controls.Add(this.metroButton7);
             this.groupBox1.Controls.Add(this.metroButton6);
             this.groupBox1.Controls.Add(this.metroButton5);
             this.groupBox1.Controls.Add(this.metroButton3);
@@ -73,25 +71,13 @@ namespace YFMSRF
             // 
             this.metroButton8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton8.Location = new System.Drawing.Point(471, 16);
+            this.metroButton8.Location = new System.Drawing.Point(550, 16);
             this.metroButton8.Name = "metroButton8";
             this.metroButton8.Size = new System.Drawing.Size(73, 26);
             this.metroButton8.TabIndex = 8;
             this.metroButton8.Text = "Удалить";
             this.metroButton8.UseSelectable = true;
             this.metroButton8.Click += new System.EventHandler(this.metroButton8_Click);
-            // 
-            // metroButton7
-            // 
-            this.metroButton7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton7.Location = new System.Drawing.Point(550, 16);
-            this.metroButton7.Name = "metroButton7";
-            this.metroButton7.Size = new System.Drawing.Size(73, 26);
-            this.metroButton7.TabIndex = 7;
-            this.metroButton7.Text = "Изменение";
-            this.metroButton7.UseSelectable = true;
-            this.metroButton7.Click += new System.EventHandler(this.metroButton7_Click);
             // 
             // metroButton6
             // 
@@ -167,6 +153,5 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton6;
         private MetroFramework.Controls.MetroButton metroButton8;
-        private MetroFramework.Controls.MetroButton metroButton7;
     }
 }

@@ -179,5 +179,17 @@
   <ItemGroup>
     <None Include="Resources\Виза.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gerb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gerb-fms-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\09090958-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fms-1024x768-1-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

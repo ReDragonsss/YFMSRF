@@ -39,13 +39,15 @@ namespace YFMSRF
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(56, 13);
+            this.label1.Location = new System.Drawing.Point(47, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(329, 20);
             this.label1.TabIndex = 6;
@@ -275,6 +277,15 @@ namespace YFMSRF
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::YFMSRF.Properties.Resources._09090958_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(545, 324);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,10 +301,12 @@ namespace YFMSRF
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(429, 278);
             this.MinimumSize = new System.Drawing.Size(429, 278);
             this.Name = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +324,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

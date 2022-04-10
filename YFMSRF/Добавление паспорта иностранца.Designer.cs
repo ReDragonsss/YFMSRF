@@ -53,8 +53,10 @@ namespace YFMSRF
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTextBox1
@@ -717,6 +719,15 @@ namespace YFMSRF
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::YFMSRF.Properties.Resources.fms_1024x768_1_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(-154, 253);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(492, 206);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,6 +737,7 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(515, 435);
             this.MinimumSize = new System.Drawing.Size(515, 435);
             this.Name = "Form6";
@@ -733,6 +745,7 @@ namespace YFMSRF
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -763,5 +776,6 @@ namespace YFMSRF
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

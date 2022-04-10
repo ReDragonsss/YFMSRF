@@ -50,8 +50,10 @@ namespace YFMSRF
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTextBox1
@@ -544,6 +546,15 @@ namespace YFMSRF
             this.metroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::YFMSRF.Properties.Resources.gerb_fms_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(200, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(652, 253);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // otddeport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,6 +572,7 @@ namespace YFMSRF
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroTextBox8);
+            this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(800, 316);
             this.MinimumSize = new System.Drawing.Size(800, 316);
             this.Name = "otddeport";
@@ -568,6 +580,7 @@ namespace YFMSRF
             this.Load += new System.EventHandler(this.Form7_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,5 +609,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroTextBox metroTextBox6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

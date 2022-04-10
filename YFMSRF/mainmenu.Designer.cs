@@ -42,7 +42,9 @@ namespace YFMSRF
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,6 +184,15 @@ namespace YFMSRF
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::YFMSRF.Properties.Resources.gerb_fms_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(-132, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(536, 220);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +206,7 @@ namespace YFMSRF
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximumSize = new System.Drawing.Size(749, 264);
             this.MinimumSize = new System.Drawing.Size(749, 264);
@@ -202,6 +214,7 @@ namespace YFMSRF
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +235,7 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton metroButton6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
