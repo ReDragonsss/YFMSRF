@@ -30,6 +30,7 @@ namespace YFMSRF
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test_Connect_Printer));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.печататьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,6 +130,7 @@ namespace YFMSRF
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(804, 450);
             this.MinimumSize = new System.Drawing.Size(804, 450);
             this.Name = "Test_Connect_Printer";

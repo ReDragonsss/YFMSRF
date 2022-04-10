@@ -29,6 +29,7 @@ namespace YFMSRF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
             this.label1 = new System.Windows.Forms.Label();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -208,6 +209,7 @@ namespace YFMSRF
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(749, 264);
             this.MinimumSize = new System.Drawing.Size(749, 264);
             this.Name = "mainmenu";

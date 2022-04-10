@@ -113,6 +113,26 @@ namespace YFMSRF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T_ME_1 {
+            get {
+                object obj = ResourceManager.GetObject("T.ME_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VK_1 {
+            get {
+                object obj = ResourceManager.GetObject("VK_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Виза {
             get {
                 object obj = ResourceManager.GetObject("Виза", resourceCulture);

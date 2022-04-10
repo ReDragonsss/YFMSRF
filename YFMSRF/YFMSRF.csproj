@@ -77,7 +77,6 @@
     <Compile Include="Test_Connect_Printer.Designer.cs">
       <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PCS\Для сотрудников.cs" />
     <Compile Include="mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +189,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fms-1024x768-1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VK_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\T.ME_1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
