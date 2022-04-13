@@ -102,12 +102,36 @@ namespace YFMSRF
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-         GetListUsers($"SELECT fam AS'Фамилия',name,otchestv,pol,data_rojdenia,mesto_rojden FROM Osnov_dannie_inostr");
+         GetListUsers($"SELECT fam AS'Фамилия',name AS'Имя',otchestv AS'Отчество',pol AS'Пол',data_rojdenia AS'Дата рождения',mesto_rojden AS'Место рождения' FROM Osnov_dannie_inostr");
+            dataGridView1.Columns[0].FillWeight = 9;
+            dataGridView1.Columns[1].FillWeight = 9;
+            dataGridView1.Columns[2].FillWeight = 10;
+            dataGridView1.Columns[3].FillWeight = 14;
+            dataGridView1.Columns[4].FillWeight = 13;
+            dataGridView1.Columns[5].FillWeight = 15;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-         GetListUsers("SELECT fam,ima,otech,data_rojden,grajdanstvo,seria_and_nomer_pasporta FROM deportiruuchi");
+         GetListUsers($"SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
+            dataGridView1.Columns[0].FillWeight = 8;
+            dataGridView1.Columns[1].FillWeight = 8;
+            dataGridView1.Columns[2].FillWeight = 8;
+            dataGridView1.Columns[3].FillWeight = 6;
+            dataGridView1.Columns[4].FillWeight = 9;
+            dataGridView1.Columns[5].FillWeight = 15;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 
