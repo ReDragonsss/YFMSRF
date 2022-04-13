@@ -85,7 +85,6 @@ namespace YFMSRF
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.TextChanged += new System.EventHandler(this.metroTextBox1_TextChanged);
             // 
             // metroTextBox2
             // 
@@ -270,11 +269,11 @@ namespace YFMSRF
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(122, 248);
+            this.metroButton3.Location = new System.Drawing.Point(104, 248);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(112, 23);
+            this.metroButton3.Size = new System.Drawing.Size(130, 23);
             this.metroButton3.TabIndex = 15;
-            this.metroButton3.Text = "metroButton3";
+            this.metroButton3.Text = "Проверка подключ";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 

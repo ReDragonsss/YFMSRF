@@ -17,11 +17,6 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-        }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             Form4 f4 = new Form4();
@@ -59,7 +54,7 @@ namespace YFMSRF
             string p9 = metroTextBox9.Text;
             Insertin(p1, p2, p3, p4, p5, p6, p7, p8, p9);
         }
-        public void Getinfo1()
+        public void Getinfo1()//метод для получения гражданства иностранца
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT grajdanstvo FROM vizov_anketa Where kod_inostr='{Inostranci.inostr_id}'";
@@ -72,7 +67,7 @@ namespace YFMSRF
             reader.Close();
             PCS.ControlData.conn.Close();
         }
-        public void Getinfo2()
+        public void Getinfo2()//метод для получения онсовной информации иностранца
         {
             string sql = $"SELECT fam,name,otch,pol,data_rojdenia FROM Osnov_dannie_inostr Where kod_inostr='{Inostranci.inostr_id}'";
             MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
@@ -88,7 +83,7 @@ namespace YFMSRF
             reader.Close();
             PCS.ControlData.conn.Close();
         }
-        public void Getinfo3()
+        public void Getinfo3()//метод для получения номера паспорта иностранца
         {
             string sql = $"SELECT nomer_pass FROM pass Where kod_inostr='{Inostranci.inostr_id}'";
             MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);

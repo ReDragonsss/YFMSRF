@@ -1,7 +1,7 @@
 ﻿
 namespace YFMSRF
 {
-    partial class Test_Connect_Printer
+    partial class Connect_Printer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace YFMSRF
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test_Connect_Printer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connect_Printer));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.печататьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,7 +121,7 @@ namespace YFMSRF
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // Test_Connect_Printer
+            // Connect_Printer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@ namespace YFMSRF
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(804, 450);
             this.MinimumSize = new System.Drawing.Size(804, 450);
-            this.Name = "Test_Connect_Printer";
+            this.Name = "Connect_Printer";
             this.Text = "Архивация";
             this.Load += new System.EventHandler(this.Test_Connect_Printer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

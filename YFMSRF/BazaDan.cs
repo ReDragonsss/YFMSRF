@@ -17,7 +17,6 @@ namespace YFMSRF
         {
             InitializeComponent();
         }
-        public string avtosalon = "Comp1";
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
@@ -29,9 +28,27 @@ namespace YFMSRF
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
         string id_selected_rows = null;
-        private void Form8_Load(object sender, EventArgs e)
+        public void ManagerRole(int role)
         {
-        
+            switch (role)
+            {
+                case 1://отдел депортации
+                    metroButton3.Enabled = true;
+                    metroButton1.Enabled = false;
+                    metroButton3.Visible = true;
+                    metroButton1.Visible = false;
+                    break;
+                case 2:// разрешительно-визовой работы
+                    metroButton3.Enabled = false;
+                    metroButton1.Enabled = true;
+                    metroButton3.Visible = false;
+                    metroButton1.Visible = true;
+                    break;
+                default: //off
+                    metroButton1.Enabled = true;
+                    metroButton3.Enabled = true;
+                    break;
+            }
         }
         public void GetSelectedIDString()
         {
@@ -47,7 +64,7 @@ namespace YFMSRF
             PCS.ControlData.conn.Open();
             int InsertCount = 0;
             bool result = false;
-            string SqlDelete = $"DELETE FROM {avtosalon} WHERE kod_inostr ='" + id_selected_rows + "'";
+            string SqlDelete = $"DELETE FROM {Dell.dell} WHERE fam ='" + id_selected_rows + "'";
             try
             {
                 MySqlCommand command = new MySqlCommand(SqlDelete, PCS.ControlData.conn);
@@ -97,22 +114,25 @@ namespace YFMSRF
             //Закрываем соединение
             PCS.ControlData.conn.Close();
         }
-        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Right))
-            {
-                dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
-                dataGridView1.CurrentCell.Selected = true;
-                //Метод получения ID выделенной строки в глобальную переменную
-                GetSelectedIDString();
-            }
-        }
         private void metroButton3_Click(object sender, EventArgs e)
         {
             // доступ высшее начальство
             // доступ отдел по вопросам депортации
             reload_list();
-            GetListUsers("SELECT fam,ima,otech,data_rojden,grajdanstvo,seria_and_nomer_pasporta FROM deportiruuchi");
+            GetListUsers("SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
+            Dell.dell = "deportiruuchi";
+            dataGridView1.Columns[0].FillWeight = 9;
+            dataGridView1.Columns[1].FillWeight = 9;
+            dataGridView1.Columns[2].FillWeight = 10;
+            dataGridView1.Columns[3].FillWeight = 14;
+            dataGridView1.Columns[4].FillWeight = 13;
+            dataGridView1.Columns[5].FillWeight = 15;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -120,9 +140,23 @@ namespace YFMSRF
             // доступ высшее начальство
             // доступ отдел по вопросам гражданства
             reload_list();
-            GetListUsers($"SELECT fam AS'Фамилия',name,otchestv,pol,data_rojdenia,mesto_rojden FROM Osnov_dannie_inostr");
+            GetListUsers($"SELECT fam AS'Фамилия',name AS'Имя',otchestv AS'Отчество',pol AS'Пол',data_rojdenia AS'Дата рождения',mesto_rojden AS'Место рождения',kod_inostr AS'Код иностранца' FROM Osnov_dannie_inostr");
+            Dell.dell = "Osnov_dannie_inostr";
+            dataGridView1.Columns[0].FillWeight = 8;
+            dataGridView1.Columns[1].FillWeight = 8;
+            dataGridView1.Columns[2].FillWeight = 8;
+            dataGridView1.Columns[3].FillWeight = 6;
+            dataGridView1.Columns[4].FillWeight = 9;
+            dataGridView1.Columns[5].FillWeight = 10;
+            dataGridView1.Columns[6].FillWeight = 5;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
-        // а где 2-ая кнопка
         private void metroButton6_Click(object sender, EventArgs e)
         {
             reload_list();
@@ -137,12 +171,22 @@ namespace YFMSRF
         {
            DeleteInfo();
         }
-
-        private void metroButton7_Click(object sender, EventArgs e)
+        private void BazaDan_Load(object sender, EventArgs e)
         {
-            // доступ отдел по вопросам гражданства
-            // доступ отдел по вопросам депортации
-            // доступ высшее начальство
+            ManagerRole(Auth.auth_role);
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            {
+                if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Right))
+                {
+                    dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+                    dataGridView1.CurrentCell.Selected = true;
+                    //Метод получения ID выделенной строки в глобальную переменную
+                    GetSelectedIDString();
+                }
+            }
         }
     }
 }

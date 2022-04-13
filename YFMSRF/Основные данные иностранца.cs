@@ -100,11 +100,5 @@ namespace YFMSRF
             reader.Close();
             PCS.ControlData.conn.Close();
         }
-
-        private void metroTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            createviz viz = new createviz();
-            viz.metroTextBox4.Text = metroTextBox1.Text;
-        }
     }
 }

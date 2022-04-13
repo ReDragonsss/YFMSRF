@@ -71,11 +71,11 @@
     <Compile Include="TechHelp.Designer.cs">
       <DependentUpon>TechHelp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test_Connect_Printer.cs">
+    <Compile Include="Connect_Printer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test_Connect_Printer.Designer.cs">
-      <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
+    <Compile Include="Connect_Printer.Designer.cs">
+      <DependentUpon>Connect_Printer.cs</DependentUpon>
     </Compile>
     <Compile Include="mainmenu.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="TechHelp.resx">
       <DependentUpon>TechHelp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test_Connect_Printer.resx">
-      <DependentUpon>Test_Connect_Printer.cs</DependentUpon>
+    <EmbeddedResource Include="Connect_Printer.resx">
+      <DependentUpon>Connect_Printer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Основные данные иностранца.resx">
       <DependentUpon>Основные данные иностранца.cs</DependentUpon>

@@ -65,7 +65,7 @@ namespace YFMSRF
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(346, 50);
             this.metroButton3.TabIndex = 4;
-            this.metroButton3.Text = "Выдача визы \r\nи \r\nзаполение визовой анкеты";
+            this.metroButton3.Text = "Регистрация визы \r\nи \r\nзаполение визовой анкеты";
             this.metroButton3.UseSelectable = true;
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
@@ -94,8 +94,8 @@ namespace YFMSRF
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(346, 56);
             this.metroButton1.TabIndex = 8;
-            this.metroButton1.Text = "О порядке принятия решения \r\nо неразрешении въезда в РФ\r\nв отношении Иностранного" +
-    " гражданина\r\n";
+            this.metroButton1.Text = "О порядке принятия решения \r\nо не разрешении въезда в РФ\r\nв отношении Иностранног" +
+    "о гражданина\r\n";
             this.metroButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
@@ -128,7 +128,6 @@ namespace YFMSRF
             this.metroLabel3.Size = new System.Drawing.Size(37, 19);
             this.metroLabel3.TabIndex = 11;
             this.metroLabel3.Text = "Otch";
-            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // label2
             // 

@@ -12,12 +12,12 @@ using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
-    public partial class Test_Connect_Printer : MetroFramework.Forms.MetroForm
+    public partial class Connect_Printer : MetroFramework.Forms.MetroForm
     {
         protected BindingSource bSource;
         private DataTable table;
         private MySqlDataAdapter MyDA = new MySqlDataAdapter();
-        public Test_Connect_Printer()
+        public Connect_Printer()
         {
             InitializeComponent();
             dataGridView1.ContextMenuStrip = metroContextMenu1;
@@ -65,7 +65,7 @@ namespace YFMSRF
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
             Bitmap txt = new Bitmap(dataGridView1.Size.Width + 10, dataGridView1.Size.Width + 10);// Мы создаем новый экземпляр класса
-            dataGridView1.DrawToBitmap(txt, dataGridView1.Bounds);// незнаю что это.. хотя скорее всего подготовка к разметке страниц
+            dataGridView1.DrawToBitmap(txt, dataGridView1.Bounds);//подготовка к разметке страниц
             e.Graphics.DrawImage(txt, 0,0); // разметка в дюймах выше все наприсано 
         }
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,12 +139,3 @@ namespace YFMSRF
 // https://docs.microsoft.com/ru-ru/dotnet/api/system.drawing.bitmap.-ctor?view=windowsdesktop-5.0 растовые изображения 
 // https://docs.microsoft.com/ru-ru/dotnet/api/system.drawing.printing.printdocument?view=net-5.0 PrintDocument
 //
-
-//if (ControlData.ComboId == "Changan")
-//{
-//    Arhiv = "";
-//}
-//else if (ControlData.ComboId == "Kia")
-//{
-//    Arhiv = "";
-//}

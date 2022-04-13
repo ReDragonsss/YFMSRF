@@ -484,8 +484,9 @@ namespace YFMSRF
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(138, 23);
             this.metroButton2.TabIndex = 31;
-            this.metroButton2.Text = "Проверка подключен";
+            this.metroButton2.Text = "Назад";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroTextBox5
             // 
@@ -579,7 +580,6 @@ namespace YFMSRF
             this.MinimumSize = new System.Drawing.Size(800, 316);
             this.Name = "otddeport";
             this.TransparencyKey = System.Drawing.Color.Silver;
-            this.Load += new System.EventHandler(this.Form7_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

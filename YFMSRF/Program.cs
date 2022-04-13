@@ -49,5 +49,9 @@ namespace YFMSRF
         public static string inostr_pol = null; //Статичное поле, которое хранит значение пола
         public static string inostr_grajd = null;//Статичное поле, которое хранит значение гражданства
     }
+    public static class Dell// данные авторизации
+    {
+        public static string dell = null;//Статичное поле, которое хранит значение статуса авторизации
+    }
 }
 

@@ -489,7 +489,6 @@ namespace YFMSRF
             this.MaximumSize = new System.Drawing.Size(605, 380);
             this.MinimumSize = new System.Drawing.Size(605, 380);
             this.Name = "createviz";
-            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

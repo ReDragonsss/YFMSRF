@@ -45,14 +45,13 @@ namespace YFMSRF
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(803, 393);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 
             // groupBox1
             // 
@@ -108,7 +107,7 @@ namespace YFMSRF
             // 
             this.metroButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton3.Location = new System.Drawing.Point(101, 16);
+            this.metroButton3.Location = new System.Drawing.Point(6, 16);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(205, 23);
             this.metroButton3.TabIndex = 3;
@@ -139,7 +138,7 @@ namespace YFMSRF
             this.MaximumSize = new System.Drawing.Size(800, 434);
             this.MinimumSize = new System.Drawing.Size(800, 434);
             this.Name = "BazaDan";
-            this.Load += new System.EventHandler(this.Form8_Load);
+            this.Load += new System.EventHandler(this.BazaDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

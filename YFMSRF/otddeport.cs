@@ -18,10 +18,6 @@ namespace YFMSRF
             InitializeComponent();
         }
 
-        private void Form7_Load(object sender, EventArgs e)
-        {
-        }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             string p1 = metroTextBox1.Text;
@@ -67,6 +63,11 @@ namespace YFMSRF
                 PCS.ControlData.conn.Close();
             }
             return result;
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

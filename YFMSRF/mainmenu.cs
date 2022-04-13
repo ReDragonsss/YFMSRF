@@ -76,7 +76,27 @@ namespace YFMSRF
             createviz f3 = new createviz();
             f3.Show();
         }
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            BazaDan f8 = new BazaDan();
+            f8.Show();
+        }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            TechHelp th = new TechHelp();
+            th.Show();
+        }
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            Connect_Printer t = new Connect_Printer();
+            t.Show();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -93,39 +113,6 @@ namespace YFMSRF
                 metroLabel3.Text = sotrudnik.auth_Otch;
                 metroLabel5.Text = zvanie.auth_Zvan;
             }
-        }
-
-        private void metroButton4_Click(object sender, EventArgs e)
-        {
-            BazaDan f8 = new BazaDan();
-            f8.Show();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            TechHelp th = new TechHelp();
-            th.Show();
-        }
-
-        private void metroLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void metroButton6_Click(object sender, EventArgs e)
-        {
-            Test_Connect_Printer t = new Test_Connect_Printer();
-            t.Show();
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("На время заморожено");
         }
     }
 }

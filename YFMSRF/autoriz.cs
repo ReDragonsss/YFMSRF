@@ -13,7 +13,7 @@ namespace YFMSRF
 {
     public partial class autoriz : MetroFramework.Forms.MetroForm
     {
-        static string sha256(string randomString)
+        static string sha256(string randomString)// метод для хеширования пароля
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
             var hash = new System.Text.StringBuilder();
@@ -24,7 +24,7 @@ namespace YFMSRF
             }
             return hash.ToString();
         }
-        public void GetUserInfo(string login)
+        public void GetUserInfo(string login)// метод для получение информации о данных сотрудника который залогинился 
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT * FROM Auto WHERE login='{login}'";
@@ -85,7 +85,7 @@ namespace YFMSRF
         {
             metroTextBox3.Text = sha256(metroTextBox2.Text);
         }
-        public void GetSotrydInfo()
+        public void GetSotrydInfo()// метод для получение информации о сотруднике который залогинился 
         {
             PCS.ControlData.conn.Open();
             string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where id_sotrud='{Auth.auth_sotr}'";
@@ -103,7 +103,7 @@ namespace YFMSRF
         }
         public void GetZvanieinfo()
         {
-            PCS.ControlData.conn.Open();
+            PCS.ControlData.conn.Open();// метод для получение информации о сотруднике который залогинился 
             string sql2 = $"SELECT zvanie FROM zvanie Where id_zvanie='{sotrudnik.auth_idZvan}'";
             MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
