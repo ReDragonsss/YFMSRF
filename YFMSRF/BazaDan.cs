@@ -188,5 +188,41 @@ namespace YFMSRF
                 }
             }
         }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            //for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            //    dataGridView1.Rows[i].Visible = dataGridView1[10, i].Value.ToString() == ;
+        }
+        //private void ChangeColorDGV()
+        //{
+        //    //Отражаем количество записей в ДатаГриде
+        //    int count_rows = dataGridView1.RowCount - 1;
+        //    toolStripLabel2.Text = (count_rows).ToString();
+        //    //Проходимся по ДатаГриду и красим строки в нужные нам цвета, в зависимости от статуса студента
+        //    for (int i = 0; i < count_rows; i++)
+        //    {
+
+        //        //статус конкретного студента в Базе данных, на основании индекса строки
+        //        int id_selected_status = Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
+        //        //Логический блок для определения цветности
+        //        if (id_selected_status == 1)
+        //        {
+        //            //Красим в красный
+        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+        //        }
+        //        if (id_selected_status == 2)
+        //        {
+        //            //Красим в зелёный
+        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+        //        }
+        //        if (id_selected_status == 3)
+        //        {
+        //            //Красим в желтый
+        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Cyan;
+        //        }
+        //    }
+        //}
+
     }
 }

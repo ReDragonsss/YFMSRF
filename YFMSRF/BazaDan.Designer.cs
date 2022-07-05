@@ -37,6 +37,7 @@ namespace YFMSRF
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@ namespace YFMSRF
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.metroButton2);
             this.groupBox1.Controls.Add(this.metroButton8);
             this.groupBox1.Controls.Add(this.metroButton6);
             this.groupBox1.Controls.Add(this.metroButton5);
@@ -127,6 +129,16 @@ namespace YFMSRF
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(362, 19);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.TabIndex = 9;
+            this.metroButton2.Text = "metroButton2";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // BazaDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,5 +166,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton6;
         private MetroFramework.Controls.MetroButton metroButton8;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }
