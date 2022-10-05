@@ -18,5 +18,6 @@ namespace YFMSRF.PCS
         private const string password = "70964010";
         //Объявляем и инициализируем соединение
         public static readonly MySqlConnection conn = new MySqlConnection($"server={host};port={port};user={username};database={database};password={password};");
+        https://cs-fade.ru/stati/295-mysql-ustanovka-mysql-servere-na-lokalnyy-kompyuter.html?ysclid=l8v6u64h8r528349745
     }
 }

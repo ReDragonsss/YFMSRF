@@ -39,7 +39,7 @@ namespace YFMSRF
             }
             reader.Close();
             PCS.ControlData.conn.Close();
-            GetSotrydInfo();
+            GetSotrydInfo();33
             GetZvanieinfo();
         }
         public autoriz()
