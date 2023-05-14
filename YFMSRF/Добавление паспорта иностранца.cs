@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
+using System.Data.SQLite;
 namespace YFMSRF
 {
     public partial class Form6 : MetroFramework.Forms.MetroForm
@@ -25,7 +24,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta,kod_inostr) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{norgan}','{kpodraz}','{strrojd}','{godrojd}','{naselpunkt}','{vidprop}','{dprop}','{regprop}','{gprop}','{rnaselpunkt}','{ylica}','{dom}','{stroen}','{kvartira}','{organych}','{ikod}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 
 namespace YFMSRF
 {
@@ -18,7 +18,7 @@ namespace YFMSRF
             InitializeComponent();
         }
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private SQLiteDataAdapter MyDA = new SQLiteDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
         protected BindingSource bSource;
         //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
@@ -67,7 +67,7 @@ namespace YFMSRF
             string SqlDelete = $"DELETE FROM {Dell.dell} WHERE fam ='" + id_selected_rows + "'";
             try
             {
-                MySqlCommand command = new MySqlCommand(SqlDelete, PCS.ControlData.conn);
+                SQLiteCommand command = new SQLiteCommand(SqlDelete, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch
@@ -104,7 +104,7 @@ namespace YFMSRF
             //Открываем соединение
             PCS.ControlData.conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
+            MyDA.SelectCommand = new SQLiteCommand(commandStr, PCS.ControlData.conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица

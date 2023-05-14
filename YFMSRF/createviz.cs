@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace YFMSRF
 {
@@ -58,8 +59,8 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT grajdanstvo FROM vizov_anketa Where kod_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
-            MySqlDataReader reader = command.ExecuteReader();
+            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+            SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_grajd = reader[0].ToString();
@@ -69,9 +70,10 @@ namespace YFMSRF
         }
         public void Getinfo2()//метод для получения онсовной информации иностранца
         {
-            string sql = $"SELECT fam,name,otch,pol,data_rojdenia FROM Osnov_dannie_inostr Where kod_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
-            MySqlDataReader reader = command.ExecuteReader();
+            PCS.ControlData.conn.Open();
+            string sql = $"SELECT fam,name,otchestv,pol,data_rojdenia FROM Osnov_dannie_inostr Where kod_inostr='{Inostranci.inostr_id}'";
+            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+            SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_fam = reader[0].ToString();
@@ -85,9 +87,10 @@ namespace YFMSRF
         }
         public void Getinfo3()//метод для получения номера паспорта иностранца
         {
+            PCS.ControlData.conn.Open();
             string sql = $"SELECT nomer_pass FROM pass Where kod_inostr='{Inostranci.inostr_id}'";
-            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
-            MySqlDataReader reader = command.ExecuteReader();
+            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+            SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_pass = reader[0].ToString();
@@ -104,7 +107,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO viza (data_vidachi,na_srock,grajdanstv,fio,nomber_pass,data_rojd,pol,prinim_organiz,dopol_sveden) VALUES ('{datav}','{nasrock}','{grajd}','{fio}','{nomberp}','{datar}','{pol}','{prinimo}','{dopols}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 
 namespace YFMSRF
 {
@@ -16,7 +16,7 @@ namespace YFMSRF
     {
         protected BindingSource bSource;
         private DataTable table;
-        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private SQLiteDataAdapter MyDA = new SQLiteDataAdapter();
         public Connect_Printer()
         {
             InitializeComponent();
@@ -80,7 +80,7 @@ namespace YFMSRF
             //Открываем соединение
             PCS.ControlData.conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
+            MyDA.SelectCommand = new SQLiteCommand(commandStr, PCS.ControlData.conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица

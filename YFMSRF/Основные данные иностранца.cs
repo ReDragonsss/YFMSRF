@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 
 namespace YFMSRF
 {
@@ -26,7 +26,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO Osnov_dannie_inostr (fam, name, otchestv, pol, data_rojdenia, mesto_rojden) VALUES ('{famil}','{name}','{otcestv}','{pol}','{rojd}','{mestro}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -91,8 +91,8 @@ namespace YFMSRF
             string o = metroTextBox1.Text;
             PCS.ControlData.conn.Open();
             string sql2 = $"SELECT kod_inostr FROM Osnov_dannie_inostr Where fam='{o}'";
-            MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
-            MySqlDataReader reader = command.ExecuteReader();
+            SQLiteCommand command = new SQLiteCommand(sql2, PCS.ControlData.conn);
+            SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_id = reader[0].ToString();

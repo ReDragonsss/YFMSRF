@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace YFMSRF.PCS
 {
@@ -17,7 +17,6 @@ namespace YFMSRF.PCS
         private const string username = "st_2_19_21";
         private const string password = "70964010";
         //Объявляем и инициализируем соединение
-        public static readonly MySqlConnection conn = new MySqlConnection($"server={host};port={port};user={username};database={database};password={password};");
-        https://cs-fade.ru/stati/295-mysql-ustanovka-mysql-servere-na-lokalnyy-kompyuter.html?ysclid=l8v6u64h8r528349745
+        public static readonly SQLiteConnection conn = new SQLiteConnection(@"Data Source=.\x64\MyDB.db;Version=3;");
     }
 }

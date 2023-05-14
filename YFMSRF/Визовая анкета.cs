@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 
 namespace YFMSRF
 {
@@ -29,7 +29,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO vizov_anketa (strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,srok_zagran_pass,kod_gosydarstv,home_adress,profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi,kod_inostr) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{kod}','{home}','{srok}','{proff}','{cel}','{pred}','{data}','{mest}','{ikod}')";
             try
             {
-                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)

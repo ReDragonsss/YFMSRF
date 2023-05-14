@@ -21,7 +21,7 @@ namespace YFMSRF
     }
     public static class Auth// данные авторизации
     {
-        public static bool auth = false;//Статичное поле, которое хранит значение статуса авторизации
+        public static bool auth = true;//Статичное поле, которое хранит значение статуса авторизации
         public static string auth_id = null;//Статичное поле, которое хранит значения ID пользователя
         public static string auth_login = null;//Статичное поле, которое хранит значения ФИО пользователя
         public static string auth_sotr = null;//статик поле для данных сотрудника
