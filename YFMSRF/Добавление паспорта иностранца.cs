@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Vml;
+using YFMSRF;
+using MetroFramework.Controls;
+using System.Reflection;
+using DocumentFormat.OpenXml.Vml.Office;
 namespace YFMSRF
 {
     public partial class Form6 : MetroFramework.Forms.MetroForm
@@ -53,7 +59,34 @@ namespace YFMSRF
         {
 
         }
-
+        public bool Audit()
+        {
+            bool result = false;
+            int InsertCount = 0;
+            PCS.ControlData.conn.Open();
+            string sql = $"INSERT INTO audit_log (name, fam, otch, auth_zvan, action) VALUES ('{sotrudnik.auth_Ima}','{sotrudnik.auth_Fam}','{sotrudnik.auth_Otch}','{zvanie.auth_Zvan}','{Action.action}')"; ;
+            try
+            {
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                InsertCount = command.ExecuteNonQuery();
+            }
+            catch (Exception osh)
+            {
+                //Если возникла ошибка, то запрос не вставит ни одной строки
+                InsertCount = 0;
+                MessageBox.Show($"Неповезло" + osh);
+            }
+            finally
+            {
+                //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
+                if (InsertCount != 0)
+                {
+                    result = true;
+                }
+                PCS.ControlData.conn.Close();
+            }
+            return result;
+        }
         private void metroButton1_Click(object sender, EventArgs e)
         {
             string p1 = metroTextBox1.Text;

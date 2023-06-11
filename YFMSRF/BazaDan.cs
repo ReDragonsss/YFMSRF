@@ -28,6 +28,7 @@ namespace YFMSRF
         //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
         //что бы в БД не отправлялся null
         string id_selected_rows = null;
+
         public void ManagerRole(int role)
         {
             switch (role)
@@ -87,6 +88,7 @@ namespace YFMSRF
             }
             return result;
         }
+
         public void reload_list()
         {
             //Чистим виртуальную таблицу

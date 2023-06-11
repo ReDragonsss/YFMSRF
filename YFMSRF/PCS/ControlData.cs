@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace YFMSRF.PCS
 {
-
     class ControlData
     {
         public static string ComboId = "0";
@@ -19,4 +18,5 @@ namespace YFMSRF.PCS
         //Объявляем и инициализируем соединение
         public static readonly SQLiteConnection conn = new SQLiteConnection(@"Data Source=.\x64\MyDB.db;Version=3;");
     }
+
 }

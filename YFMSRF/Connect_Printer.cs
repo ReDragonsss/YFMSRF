@@ -162,4 +162,5 @@ namespace YFMSRF
 // https://www.youtube.com/watch?v=-znftdtV1sk&t=126s видеоурок где, незнаю говорит он или нет но я по нему делал
 // https://docs.microsoft.com/ru-ru/dotnet/api/system.drawing.bitmap.-ctor?view=windowsdesktop-5.0 растовые изображения 
 // https://docs.microsoft.com/ru-ru/dotnet/api/system.drawing.printing.printdocument?view=net-5.0 PrintDocument
-//
+// 
+//https://ru.stackoverflow.com/questions/824207/Замена-текста-и-печать-в-c

@@ -53,5 +53,9 @@ namespace YFMSRF
     {
         public static string dell = null;//Статичное поле, которое хранит значение статуса авторизации
     }
+    public static class Action// данные авторизации
+    {
+        public static string action = null;//Статичное поле, которое хранит значение статуса авторизации
+    }
 }
 

@@ -73,7 +73,7 @@ namespace YFMSRF
                 try
                 {
                     PCS.ControlData.conn.Open();
-                    MessageBox.Show("База данных работает стабильно");
+                    MessageBox.Show("Произошла ошибка, база данных не отвечает");
                     PCS.ControlData.conn.Close();
                 }
                 catch (Exception osh)

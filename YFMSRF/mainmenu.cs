@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace YFMSRF
 {
@@ -59,13 +60,36 @@ namespace YFMSRF
                 ManagerRole(Auth.auth_role);
                 metroLabel3.Text = sotrudnik.auth_Otch;
                 metroLabel5.Text = zvanie.auth_Zvan;
+                Action.action = "Авторизовался";
+                Audit();
             }
             else
             {
                 this.Close();
             }
         }
-
+        public bool Audit()
+        {
+            bool result = false;
+            int InsertCount = 0;
+            PCS.ControlData.conn.Open();
+            string sql = $"INSERT INTO audit_log (name, fam, otch, auth_zvan, actions) VALUES ('{sotrudnik.auth_Ima}','{sotrudnik.auth_Fam}','{sotrudnik.auth_Otch}','{zvanie.auth_Zvan}','{Action.action}')"; ;
+            try
+            {
+                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                InsertCount = command.ExecuteNonQuery();
+            }
+            finally
+            {
+                //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
+                if (InsertCount != 0)
+                {
+                    result = true;
+                }
+                PCS.ControlData.conn.Close();
+            }
+            return result;
+        }
         private void metroButton1_Click(object sender, EventArgs e)
         {
             otddeport f7 = new otddeport();

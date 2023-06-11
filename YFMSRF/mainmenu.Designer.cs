@@ -54,7 +54,7 @@ namespace YFMSRF
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 16);
+            this.label1.Size = new System.Drawing.Size(168, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Изменить пользователя";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -90,7 +90,7 @@ namespace YFMSRF
             // metroButton1
             // 
             this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton1.Location = new System.Drawing.Point(12, 42);
+            this.metroButton1.Location = new System.Drawing.Point(12, 100);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(346, 56);
             this.metroButton1.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace YFMSRF
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(9, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 16);
+            this.label2.Size = new System.Drawing.Size(166, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Техническая поддержка";
             this.label2.Click += new System.EventHandler(this.label2_Click);
