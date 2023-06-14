@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
 namespace YFMSRF
@@ -59,8 +59,8 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT grajdanstvo FROM vizov_anketa Where kod_inostr='{Inostranci.inostr_id}'";
-            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_grajd = reader[0].ToString();
@@ -72,15 +72,15 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT fam,name,otchestv,pol,data_rojdenia FROM Osnov_dannie_inostr Where kod_inostr='{Inostranci.inostr_id}'";
-            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_fam = reader[0].ToString();
                 Inostranci.inostr_ima = reader[1].ToString();
                 Inostranci.inostr_otch = reader[2].ToString();
                 Inostranci.inostr_pol = reader[3].ToString();
-                Inostranci.inostr_datar = reader[4].ToString();
+                Inostranci.inostr_datar = reader[2].ToString();
             }
             reader.Close();
             PCS.ControlData.conn.Close();
@@ -89,11 +89,11 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT nomer_pass FROM pass Where kod_inostr='{Inostranci.inostr_id}'";
-            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Inostranci.inostr_pass = reader[0].ToString();
+                Inostranci.inostr_pass = reader[2].ToString();
             }
             reader.Close();
             PCS.ControlData.conn.Close();
@@ -107,7 +107,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO viza (data_vidachi,na_srock,grajdanstv,fio,nomber_pass,data_rojd,pol,prinim_organiz,dopol_sveden) VALUES ('{datav}','{nasrock}','{grajd}','{fio}','{nomberp}','{datar}','{pol}','{prinimo}','{dopols}')";
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -135,8 +135,8 @@ namespace YFMSRF
             Getinfo3();//нужен для переменной паспорта
             metroTextBox3.Text = Inostranci.inostr_grajd;
             metroTextBox4.Text = $"{Inostranci.inostr_fam} {Inostranci.inostr_ima} {Inostranci.inostr_otch}";
-            metroTextBox5.Text = Inostranci.inostr_pass;
-            metroTextBox6.Text = Inostranci.inostr_datar;
+            metroTextBox5.Text = Convert.ToString(Inostranci.inostr_pass);
+            metroTextBox6.Text = Convert.ToString(Inostranci.inostr_datar);
             metroTextBox7.Text = Inostranci.inostr_pol;
         }
     }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -16,7 +16,7 @@ namespace YFMSRF
     {
         protected BindingSource bSource;
         private DataTable table;
-        private SQLiteDataAdapter MyDA = new SQLiteDataAdapter();
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         public Connect_Printer()
         {
             InitializeComponent();
@@ -67,6 +67,9 @@ namespace YFMSRF
             Bitmap txt = new Bitmap(dataGridView1.Size.Width + 10, dataGridView1.Size.Width + 10);// Мы создаем новый экземпляр класса
             dataGridView1.DrawToBitmap(txt, dataGridView1.Bounds);//подготовка к разметке страниц
             e.Graphics.DrawImage(txt, 0,0); // разметка в дюймах выше все наприсано 
+            Action.action = "Распечатал";
+            Aud instance = new Aud();
+            bool auditResult = instance.Audit();
         }
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,7 +83,7 @@ namespace YFMSRF
             //Открываем соединение
             PCS.ControlData.conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new SQLiteCommand(commandStr, PCS.ControlData.conn);
+            MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица

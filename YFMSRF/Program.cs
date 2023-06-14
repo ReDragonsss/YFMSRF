@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -19,6 +20,7 @@ namespace YFMSRF
             Application.Run(new mainmenu());
         }
     }
+
     public static class Auth// данные авторизации
     {
         public static bool auth = true;//Статичное поле, которое хранит значение статуса авторизации
@@ -51,11 +53,38 @@ namespace YFMSRF
     }
     public static class Dell// данные авторизации
     {
-        public static string dell = null;//Статичное поле, которое хранит значение статуса авторизации
+        public static string dell = null;//Статичное поле, которое хранит 
+        public static string id = null;//Статичное поле, которое хранит 
     }
     public static class Action// данные авторизации
     {
         public static string action = null;//Статичное поле, которое хранит значение статуса авторизации
+    }
+    public class Aud
+    {
+        public bool Audit()
+        {
+            DateTime currentTime = DateTime.Now;
+            bool result = false;
+            int InsertCount = 0;
+            PCS.ControlData.conn.Open();
+            string sql = $"INSERT INTO audit_log (name, fam, otch, auth_zvan, actions, times) VALUES ('{sotrudnik.auth_Ima}','{sotrudnik.auth_Fam}','{sotrudnik.auth_Otch}','{zvanie.auth_Zvan}','{Action.action}','{currentTime}')";
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                InsertCount = command.ExecuteNonQuery();
+            }
+            finally
+            {
+                //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
+                if (InsertCount != 0)
+                {
+                    result = true;
+                }
+                PCS.ControlData.conn.Close();
+            }
+            return result;
+        }
     }
 }
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Vml;
 using YFMSRF;
@@ -30,7 +30,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO pass (seria_pass,nomer_pass,data_vidachi,punkt_vidachi,nazvan_organa,kod_podrazd,strana_rojdenia,god_vidach,naselen_punkt_rojden,vid_propiski_ycheta,data_propiski,region_propiski,gorod_propiski,naselenni_punkt,ylica,dom,stroenie,kvartira,organ_ycheta,kod_inostr) VALUES ('{spass}','{npass}','{dvidach}','{pvidach}','{norgan}','{kpodraz}','{strrojd}','{godrojd}','{naselpunkt}','{vidprop}','{dprop}','{regprop}','{gprop}','{rnaselpunkt}','{ylica}','{dom}','{stroen}','{kvartira}','{organych}','{ikod}')";
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -67,7 +67,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO audit_log (name, fam, otch, auth_zvan, action) VALUES ('{sotrudnik.auth_Ima}','{sotrudnik.auth_Fam}','{sotrudnik.auth_Otch}','{zvanie.auth_Zvan}','{Action.action}')"; ;
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)

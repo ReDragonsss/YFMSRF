@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -26,10 +26,10 @@ namespace YFMSRF
             bool result = false;
             int InsertCount = 0;
             PCS.ControlData.conn.Open();
-            string sql = $"INSERT INTO vizov_anketa (strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,srok_zagran_pass,kod_gosydarstv,home_adress,profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi,kod_inostr) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{kod}','{home}','{srok}','{proff}','{cel}','{pred}','{data}','{mest}','{ikod}')";
+            string sql = $"INSERT INTO vizov_anketa (strana_rojdenia,grajdanstvo,family_polojenie,vid_zagran_pass,number_zagran_pass,kod_gosydarstv,home_adress,srok_zagran_pass, profession_deutelnost,cel_prebiv,predastav_otpechatki,data_one_vezda_and_viezda,mest_podpis_vizi,kod_inostr) VALUES ('{strana}','{grad}','{fam}','{vid}','{num}','{kod}','{home}','{srok}','{proff}','{cel}','{pred}','{data}','{mest}','{ikod}')";
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -67,6 +67,8 @@ namespace YFMSRF
             string p13 = metroTextBox11.Text;
             string p14 = Inostranci.inostr_id;
             InsertComp(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14);
+            Form6 f6 = new Form6();
+            f6.Show();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)

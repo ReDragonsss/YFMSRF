@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -26,7 +26,7 @@ namespace YFMSRF
             string sql = $"INSERT INTO Osnov_dannie_inostr (fam, name, otchestv, pol, data_rojdenia, mesto_rojden) VALUES ('{famil}','{name}','{otcestv}','{pol}','{rojd}','{mestro}')";
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch (Exception osh)
@@ -43,6 +43,9 @@ namespace YFMSRF
                     result = true;
                 }
                 PCS.ControlData.conn.Close();
+                Action.action = "Занес иностранца";
+                Aud instance = new Aud();
+                bool auditResult = instance.Audit();
             }
             return result;
         }
@@ -66,6 +69,8 @@ namespace YFMSRF
             string p6 = metroTextBox6.Text;
             InsertComp(p1,p2,p3,p4,p5,p6);
             Getinfo();
+            Form5 f5 = new Form5();
+            f5.Show();
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
@@ -73,7 +78,7 @@ namespace YFMSRF
                 try
                 {
                     PCS.ControlData.conn.Open();
-                    MessageBox.Show("Произошла ошибка, база данных не отвечает");
+                    MessageBox.Show("База данных работает стабильно");
                     PCS.ControlData.conn.Close();
                 }
                 catch (Exception osh)
@@ -91,8 +96,8 @@ namespace YFMSRF
             string o = metroTextBox1.Text;
             PCS.ControlData.conn.Open();
             string sql2 = $"SELECT kod_inostr FROM Osnov_dannie_inostr Where fam='{o}'";
-            SQLiteCommand command = new SQLiteCommand(sql2, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Inostranci.inostr_id = reader[0].ToString();

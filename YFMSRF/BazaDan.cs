@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.VariantTypes;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -18,7 +20,7 @@ namespace YFMSRF
             InitializeComponent();
         }
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
-        private SQLiteDataAdapter MyDA = new SQLiteDataAdapter();
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
         protected BindingSource bSource;
         //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
@@ -68,7 +70,7 @@ namespace YFMSRF
             string SqlDelete = $"DELETE FROM {Dell.dell} WHERE fam ='" + id_selected_rows + "'";
             try
             {
-                SQLiteCommand command = new SQLiteCommand(SqlDelete, PCS.ControlData.conn);
+                MySqlCommand command = new MySqlCommand(SqlDelete, PCS.ControlData.conn);
                 InsertCount = command.ExecuteNonQuery();
             }
             catch
@@ -92,7 +94,7 @@ namespace YFMSRF
         public void reload_list()
         {
             //Чистим виртуальную таблицу
-            if(table != null)
+            if (table != null)
             {
                 table.Clear();
                 dataGridView1.DataSource = bSource;
@@ -106,7 +108,7 @@ namespace YFMSRF
             //Открываем соединение
             PCS.ControlData.conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
-            MyDA.SelectCommand = new SQLiteCommand(commandStr, PCS.ControlData.conn);
+            MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
             //Заполняем таблицу записями из БД
             MyDA.Fill(table);
             //Указываем, что источником данных в bindingsource является заполненная выше таблица
@@ -163,7 +165,6 @@ namespace YFMSRF
         {
             reload_list();
         }
-
         private void metroButton5_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -171,7 +172,10 @@ namespace YFMSRF
 
         private void metroButton8_Click(object sender, EventArgs e)
         {
-           DeleteInfo();
+            DeleteInfo();
+            Action.action = "Удалил информацию";
+            Aud instance = new Aud();
+            bool auditResult = instance.Audit();
         }
         private void BazaDan_Load(object sender, EventArgs e)
         {
@@ -186,45 +190,29 @@ namespace YFMSRF
                     dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
                     dataGridView1.CurrentCell.Selected = true;
                     //Метод получения ID выделенной строки в глобальную переменную
-                    GetSelectedIDString();
+                    string index_selected_rows;
+                    //Индекс выбранной строки
+                    index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
+                    //ID конкретной записи в Базе данных, на основании индекса строки
+                    id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[6].Value.ToString();
                 }
             }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            //for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-            //    dataGridView1.Rows[i].Visible = dataGridView1[10, i].Value.ToString() == ;
+            Dell.id = id_selected_rows;
+            if (string.IsNullOrEmpty(id_selected_rows))
+            {
+                MessageBox.Show("Вы не выбрали поле");
+            }
+            else
+            {
+                Form1 f1 = new Form1();
+                f1.Show();
+            }
+
+
         }
-        //private void ChangeColorDGV()
-        //{
-        //    //Отражаем количество записей в ДатаГриде
-        //    int count_rows = dataGridView1.RowCount - 1;
-        //    toolStripLabel2.Text = (count_rows).ToString();
-        //    //Проходимся по ДатаГриду и красим строки в нужные нам цвета, в зависимости от статуса студента
-        //    for (int i = 0; i < count_rows; i++)
-        //    {
-
-        //        //статус конкретного студента в Базе данных, на основании индекса строки
-        //        int id_selected_status = Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
-        //        //Логический блок для определения цветности
-        //        if (id_selected_status == 1)
-        //        {
-        //            //Красим в красный
-        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-        //        }
-        //        if (id_selected_status == 2)
-        //        {
-        //            //Красим в зелёный
-        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-        //        }
-        //        if (id_selected_status == 3)
-        //        {
-        //            //Красим в желтый
-        //            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Cyan;
-        //        }
-        //    }
-        //}
-
     }
 }

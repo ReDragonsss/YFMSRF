@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using MySql.Data.MySqlClient;
 
 namespace YFMSRF
 {
@@ -28,8 +28,8 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql = $"SELECT * FROM Auto WHERE login='{login}'";
-            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 Auth.auth_id = reader[0].ToString();
@@ -55,10 +55,10 @@ namespace YFMSRF
             string sql = "SELECT * FROM Auto WHERE login = @un and password= @up";
             PCS.ControlData.conn.Open();
             DataTable table = new DataTable();
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter();
-            SQLiteCommand command = new SQLiteCommand(sql, PCS.ControlData.conn);
-            command.Parameters.Add("@un", DbType.String, 25);
-            command.Parameters.Add("@up", DbType.String, 25);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+            command.Parameters.Add("@un", MySqlDbType.VarChar, 25);
+            command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
             command.Parameters["@un"].Value = metroTextBox1.Text;
             command.Parameters["@up"].Value = sha256(metroTextBox2.Text);
             adapter.SelectCommand = command;
@@ -89,8 +89,8 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();
             string sql1 = $"SELECT famil, ima, otchestv, id_zvanie  FROM sotrudnik Where id_sotrud='{Auth.auth_sotr}'";
-            SQLiteCommand command = new SQLiteCommand(sql1, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql1, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 sotrudnik.auth_Ima = reader[0].ToString();
@@ -105,8 +105,8 @@ namespace YFMSRF
         {
             PCS.ControlData.conn.Open();// метод для получение информации о сотруднике который залогинился 
             string sql2 = $"SELECT zvanie FROM zvanie Where id_zvanie='{sotrudnik.auth_idZvan}'";
-            SQLiteCommand command = new SQLiteCommand(sql2, PCS.ControlData.conn);
-            SQLiteDataReader reader = command.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql2, PCS.ControlData.conn);
+            MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 zvanie.auth_Zvan = reader[0].ToString();
