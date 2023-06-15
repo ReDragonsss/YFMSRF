@@ -47,9 +47,23 @@ namespace YFMSRF
         public static string inostr_fam = null; //Статичное поле, которое хранит значение фамилии
         public static string inostr_otch = null; //Статичное поле, которое хранит значение отчества
         public static string inostr_pass = null; //Статичное поле, которое хранит значение паспорта
+        public static string inostr_seria = null; //Статичное поле, которое хранит значение паспорта
         public static string inostr_datar = null; //Статичное поле, которое хранит значение даты 
+        public static string inostr_mestr = null; //Статичное поле, которое хранит значение даты 
         public static string inostr_pol = null; //Статичное поле, которое хранит значение пола
         public static string inostr_grajd = null;//Статичное поле, которое хранит значение гражданства
+    }
+    static class viza//данные иностранца
+    {
+        public static string data_vidachi = null;
+        public static string na_srock = null;
+        public static string grajdanstv = null;
+        public static string fio = null;
+        public static string nomber_pass = null;
+        public static string data_rojd = null;
+        public static string pol = null;
+        public static string prinim_organiz = null;
+        public static string dopol_sveden = null;
     }
     public static class Dell// данные авторизации
     {

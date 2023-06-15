@@ -26,7 +26,7 @@ namespace YFMSRF
         {
             table = new DataTable();
             bSource = new BindingSource();
-            string commandStr = $"SELECT name, fam, otch, auth_zvan, actions, times FROM audit_log";
+            string commandStr = $"SELECT id_actions, name, fam, otch, auth_zvan, actions, times FROM audit_log";
             PCS.ControlData.conn.Open();
             MyDA.SelectCommand = new MySqlCommand(commandStr, PCS.ControlData.conn);
             MyDA.Fill(table);
@@ -36,18 +36,20 @@ namespace YFMSRF
             dataGridView1.DataSource = bSource;
             //Закрываем соединение
             PCS.ControlData.conn.Close();
-            dataGridView1.Columns[0].FillWeight = 20;
-            dataGridView1.Columns[1].FillWeight = 20;
-            dataGridView1.Columns[2].FillWeight = 20;
-            dataGridView1.Columns[3].FillWeight = 20;
-            dataGridView1.Columns[4].FillWeight = 20;
-            dataGridView1.Columns[5].FillWeight = 20;
+            dataGridView1.Columns[0].FillWeight = 6;
+            dataGridView1.Columns[1].FillWeight = 11;
+            dataGridView1.Columns[2].FillWeight = 12;
+            dataGridView1.Columns[3].FillWeight = 12;
+            dataGridView1.Columns[4].FillWeight = 15;
+            dataGridView1.Columns[5].FillWeight = 29;
+            dataGridView1.Columns[6].FillWeight = 15;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +60,31 @@ namespace YFMSRF
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

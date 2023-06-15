@@ -24,18 +24,31 @@ namespace YFMSRF
                 case 1://отдел депортации
                     metroButton1.Enabled = true;
                     metroButton3.Enabled = false;
+                    metroButton7.Enabled = false;
                     metroButton1.Visible = true;
                     metroButton3.Visible = false;
+                    metroButton7.Visible = false;
+                    metroButton2.Enabled = false;
+                    metroButton2.Visible = false;
                     break;
                 case 2:// разрешительно-визовой работы
                     metroButton1.Enabled = false;
                     metroButton3.Enabled = true;
+                    metroButton7.Enabled = false;
                     metroButton1.Visible = false;
                     metroButton3.Visible = true;
+                    metroButton7.Visible = false;
+                    metroButton2.Enabled = false;
+                    metroButton2.Visible = false;
                     break;
                 case 3:// Начальство 
-                    metroButton1.Enabled = true;
+                    metroButton1.Enabled = false;
+                    metroButton1.Visible = false;
+                    metroButton7.Visible = false;
                     metroButton3.Enabled = true;
+                    metroButton7.Enabled = true;
+                    metroButton3.Visible = true;
+                    metroButton7.Visible = true;
                     break;
                 default: //off
                     metroLabel1.Text="Неизвестный пользователь";
@@ -123,6 +136,12 @@ namespace YFMSRF
         {
             Audit t = new Audit();
             t.Show();
+        }
+
+        private void metroButton7_Click(object sender, EventArgs e)
+        {
+            otddeport f7 = new otddeport();
+            f7.Show();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace YFMSRF
                     result = true;
                 }
                 PCS.ControlData.conn.Close();
-                Action.action = "Занес иностранца";
+                Action.action = "Занес иностранца "+ famil +""+ name +""+ otcestv +"";
                 Aud instance = new Aud();
                 bool auditResult = instance.Audit();
             }

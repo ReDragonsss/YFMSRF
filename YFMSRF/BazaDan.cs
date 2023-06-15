@@ -40,12 +40,20 @@ namespace YFMSRF
                     metroButton1.Enabled = false;
                     metroButton3.Visible = true;
                     metroButton1.Visible = false;
+                    metroButton8.Enabled = false;
+                    metroButton8.Visible = false;
                     break;
                 case 2:// разрешительно-визовой работы
                     metroButton3.Enabled = false;
                     metroButton1.Enabled = true;
                     metroButton3.Visible = false;
                     metroButton1.Visible = true;
+                    metroButton8.Enabled = false;
+                    metroButton8.Visible = false;
+                    break;
+                case 3:// разрешительно-визовой работы
+                    metroButton8.Enabled = true;
+                    metroButton8.Visible = true;
                     break;
                 default: //off
                     metroButton1.Enabled = true;
@@ -60,14 +68,14 @@ namespace YFMSRF
             //Индекс выбранной строки
             index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
             //ID конкретной записи в Базе данных, на основании индекса строки
-            id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
+            id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[5].Value.ToString();
         }
         public bool DeleteInfo()// Запрос на удаление
         {
             PCS.ControlData.conn.Open();
             int InsertCount = 0;
             bool result = false;
-            string SqlDelete = $"DELETE FROM {Dell.dell} WHERE fam ='" + id_selected_rows + "'";
+            string SqlDelete = $"DELETE FROM {Dell.dell} WHERE id_viz ='" + id_selected_rows + "'";
             try
             {
                 MySqlCommand command = new MySqlCommand(SqlDelete, PCS.ControlData.conn);
@@ -98,6 +106,7 @@ namespace YFMSRF
             {
                 table.Clear();
                 dataGridView1.DataSource = bSource;
+                GetListUsers($"SELECT id_viz, data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM {Dell.dell}");
             }
         }
         public void GetListUsers(string commandStr)
@@ -144,15 +153,18 @@ namespace YFMSRF
             // доступ высшее начальство
             // доступ отдел по вопросам гражданства
             reload_list();
-            GetListUsers($"SELECT fam AS'Фамилия',name AS'Имя',otchestv AS'Отчество',pol AS'Пол',data_rojdenia AS'Дата рождения',mesto_rojden AS'Место рождения',kod_inostr AS'Код иностранца' FROM Osnov_dannie_inostr");
-            Dell.dell = "Osnov_dannie_inostr";
-            dataGridView1.Columns[0].FillWeight = 8;
-            dataGridView1.Columns[1].FillWeight = 8;
-            dataGridView1.Columns[2].FillWeight = 8;
-            dataGridView1.Columns[3].FillWeight = 6;
-            dataGridView1.Columns[4].FillWeight = 9;
-            dataGridView1.Columns[5].FillWeight = 10;
-            dataGridView1.Columns[6].FillWeight = 5;
+            GetListUsers($"SELECT id_viz, data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM viza");
+            Dell.dell = "viza";
+            dataGridView1.Columns[0].FillWeight = 5;
+            dataGridView1.Columns[1].FillWeight = 11;
+            dataGridView1.Columns[2].FillWeight = 11;
+            dataGridView1.Columns[3].FillWeight = 12;
+            dataGridView1.Columns[4].FillWeight = 16;
+            dataGridView1.Columns[5].FillWeight = 11;
+            dataGridView1.Columns[6].FillWeight = 12;
+            dataGridView1.Columns[7].FillWeight = 11;
+            dataGridView1.Columns[8].FillWeight = 11;
+            dataGridView1.Columns[9].FillWeight = 11;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -160,6 +172,9 @@ namespace YFMSRF
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void metroButton6_Click(object sender, EventArgs e)
         {
@@ -173,7 +188,7 @@ namespace YFMSRF
         private void metroButton8_Click(object sender, EventArgs e)
         {
             DeleteInfo();
-            Action.action = "Удалил информацию";
+            Action.action = "Удалил информацию о иностранце id: " + id_selected_rows + "";
             Aud instance = new Aud();
             bool auditResult = instance.Audit();
         }
@@ -194,7 +209,7 @@ namespace YFMSRF
                     //Индекс выбранной строки
                     index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
                     //ID конкретной записи в Базе данных, на основании индекса строки
-                    id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[6].Value.ToString();
+                    id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
                 }
             }
         }

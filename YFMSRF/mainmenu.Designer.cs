@@ -45,6 +45,7 @@ namespace YFMSRF
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton7 = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +92,7 @@ namespace YFMSRF
             // metroButton1
             // 
             this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroButton1.Location = new System.Drawing.Point(12, 100);
+            this.metroButton1.Location = new System.Drawing.Point(12, 42);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(346, 56);
             this.metroButton1.TabIndex = 8;
@@ -196,19 +197,33 @@ namespace YFMSRF
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(435, 205);
+            this.metroButton2.Location = new System.Drawing.Point(567, 189);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(149, 33);
+            this.metroButton2.Size = new System.Drawing.Size(163, 24);
             this.metroButton2.TabIndex = 17;
-            this.metroButton2.Text = "metroButton2";
+            this.metroButton2.Text = "Журнал аудита";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroButton7
+            // 
+            this.metroButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroButton7.Location = new System.Drawing.Point(12, 104);
+            this.metroButton7.Name = "metroButton7";
+            this.metroButton7.Size = new System.Drawing.Size(346, 56);
+            this.metroButton7.TabIndex = 18;
+            this.metroButton7.Text = "О порядке принятия решения \r\nо не разрешении въезда в РФ\r\nв отношении Иностранног" +
+    "о гражданина\r\n";
+            this.metroButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton7.UseSelectable = true;
+            this.metroButton7.Click += new System.EventHandler(this.metroButton7_Click);
             // 
             // mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 264);
+            this.Controls.Add(this.metroButton7);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton6);
             this.Controls.Add(this.groupBox1);
@@ -250,6 +265,7 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton7;
     }
 }
 

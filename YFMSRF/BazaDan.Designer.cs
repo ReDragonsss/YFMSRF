@@ -50,7 +50,7 @@ namespace YFMSRF
             this.dataGridView1.Location = new System.Drawing.Point(-1, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(803, 393);
+            this.dataGridView1.Size = new System.Drawing.Size(898, 393);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 
@@ -64,18 +64,18 @@ namespace YFMSRF
             this.groupBox1.Controls.Add(this.metroButton1);
             this.groupBox1.Location = new System.Drawing.Point(-1, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(803, 39);
+            this.groupBox1.Size = new System.Drawing.Size(904, 39);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(362, 19);
+            this.metroButton2.Location = new System.Drawing.Point(494, 17);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.Size = new System.Drawing.Size(114, 26);
             this.metroButton2.TabIndex = 9;
-            this.metroButton2.Text = "metroButton2";
+            this.metroButton2.Text = "Редактировать";
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
@@ -83,7 +83,7 @@ namespace YFMSRF
             // 
             this.metroButton8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton8.Location = new System.Drawing.Point(550, 16);
+            this.metroButton8.Location = new System.Drawing.Point(614, 16);
             this.metroButton8.Name = "metroButton8";
             this.metroButton8.Size = new System.Drawing.Size(73, 26);
             this.metroButton8.TabIndex = 8;
@@ -95,7 +95,7 @@ namespace YFMSRF
             // 
             this.metroButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton6.Location = new System.Drawing.Point(629, 16);
+            this.metroButton6.Location = new System.Drawing.Point(730, 16);
             this.metroButton6.Name = "metroButton6";
             this.metroButton6.Size = new System.Drawing.Size(73, 26);
             this.metroButton6.TabIndex = 6;
@@ -107,7 +107,7 @@ namespace YFMSRF
             // 
             this.metroButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton5.Location = new System.Drawing.Point(708, 16);
+            this.metroButton5.Location = new System.Drawing.Point(809, 16);
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(89, 26);
             this.metroButton5.TabIndex = 5;
@@ -119,9 +119,9 @@ namespace YFMSRF
             // 
             this.metroButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton3.Location = new System.Drawing.Point(6, 16);
+            this.metroButton3.Location = new System.Drawing.Point(116, 16);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(205, 23);
+            this.metroButton3.Size = new System.Drawing.Size(199, 23);
             this.metroButton3.TabIndex = 3;
             this.metroButton3.Text = "Эмигранты подлежащие выезду";
             this.metroButton3.UseSelectable = true;
@@ -133,7 +133,7 @@ namespace YFMSRF
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroButton1.Location = new System.Drawing.Point(6, 16);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(89, 23);
+            this.metroButton1.Size = new System.Drawing.Size(105, 23);
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "БД Виз";
             this.metroButton1.UseSelectable = true;
@@ -143,12 +143,12 @@ namespace YFMSRF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 434);
+            this.ClientSize = new System.Drawing.Size(900, 434);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(800, 434);
-            this.MinimumSize = new System.Drawing.Size(800, 434);
+            this.MaximumSize = new System.Drawing.Size(900, 434);
+            this.MinimumSize = new System.Drawing.Size(900, 434);
             this.Name = "BazaDan";
             this.Load += new System.EventHandler(this.BazaDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

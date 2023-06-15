@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using YFMSRF;
+using MetroFramework.Controls;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace YFMSRF
 {
@@ -26,36 +28,94 @@ namespace YFMSRF
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            listBox1.HorizontalScrollbar = false;
             PCS.ControlData.conn.Open();
-            string sql = "SELECT fam,name,otchestv,pol,data_rojdenia,mesto_rojden,kod_inostr FROM Osnov_dannie_inostr WHERE kod_inostr = " + Dell.id + "";
+            string sql = "SELECT data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM viza WHERE id_viz = " + Dell.id + "";
             MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Inostranci.inostr_fam = reader[0].ToString();
-                Inostranci.inostr_ima = reader[1].ToString();
-                Inostranci.inostr_otch = reader[2].ToString();
-                Inostranci.inostr_datar = reader[3].ToString();
-                Inostranci.inostr_grajd = reader[4].ToString();
-                Inostranci.inostr_pass = reader[5].ToString();
+              viza.data_vidachi = reader[0].ToString();
+              viza.na_srock = reader[1].ToString();
+              viza.grajdanstv = reader[2].ToString();
+              viza.fio = reader[3].ToString();
+              viza.nomber_pass = reader[4].ToString();
+              viza.data_rojd = reader[5].ToString();
+              viza.pol = reader[6].ToString();
+              viza.prinim_organiz = reader[7].ToString();
+              viza.dopol_sveden = reader[8].ToString();
             }
             reader.Close();
             PCS.ControlData.conn.Close();
-            metroTextBox1.Text = Inostranci.inostr_fam;
-            metroTextBox2.Text = Inostranci.inostr_ima;
-            metroTextBox3.Text = Inostranci.inostr_otch;
-            metroTextBox4.Text = Inostranci.inostr_datar;
-            metroTextBox5.Text = Inostranci.inostr_grajd;
-            metroTextBox6.Text = Inostranci.inostr_pass;
+            metroTextBox1.Text = viza.data_vidachi;
+            metroTextBox2.Text = viza.na_srock;
+            metroTextBox3.Text = viza.grajdanstv;
+            metroTextBox4.Text = viza.fio;
+            metroTextBox5.Text = viza.nomber_pass;
+            metroTextBox6.Text = viza.data_rojd;
+            metroTextBox7.Text = viza.pol;
+            metroTextBox8.Text = viza.prinim_organiz;
+            listBox1.Items.Add(viza.dopol_sveden);
         }
+       
         private void metroTextBox3_Click(object sender, EventArgs e)
         {
-
+            
+        }
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            string p1 = metroTextBox1.Text;
+            string p2 = metroTextBox2.Text;
+            string p3 = metroTextBox3.Text;
+            string p4 = metroTextBox4.Text;
+            string p5 = metroTextBox5.Text;
+            string p6 = metroTextBox6.Text;
+            string p7 = metroTextBox7.Text;
+            string p8 = metroTextBox8.Text;
+            string p9 = (string)listBox1.Items[0];
+            Update(p1, p2, p3, p4, p5, p6, p7, p8, p9);
+            Action.action = "изменил информацию о " + viza.fio + "";
+            Aud instance = new Aud();
+            bool auditResult = instance.Audit();
+            this.Close();
         }
 
-        private void metroTextBox4_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public bool Update(string data, string srock, string grajd, string fio, string num, string rojd, string pol, string organiz, string sveden)
+        {
+            bool result = false;
+            int InsertCount = 0;
+            PCS.ControlData.conn.Open();
+            string sql = $"UPDATE viza SET data_vidachi ='{data}', na_srock='{srock}', grajdanstv='{grajd}', fio='{fio}', nomber_pass='{num}', data_rojd='{rojd}', pol='{pol}', prinim_organiz='{organiz}', dopol_sveden='{sveden}' WHERE id_viz = " + Dell.id + "";
+            try 
+            {
+                MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
+                InsertCount = command.ExecuteNonQuery();
+            }
+            catch (Exception osh)
+            {
+                //Если возникла ошибка, то запрос не вставит ни одной строки
+                InsertCount = 0;
+                MessageBox.Show($"Неповезло" + osh);
+            }
+            finally
+            {
+                //Ессли количество вставленных строк было не 0, то есть вставлена хотя бы 1 строка
+                if (InsertCount != 0)
+                {
+                    result = true;
+                }
+                PCS.ControlData.conn.Close();
+            }
+            return result;
         }
     }
 }

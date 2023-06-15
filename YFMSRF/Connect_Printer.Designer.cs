@@ -41,6 +41,7 @@ namespace YFMSRF
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
@@ -52,8 +53,10 @@ namespace YFMSRF
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 63);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(798, 384);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             // 
             // metroContextMenu1
             // 
@@ -61,27 +64,27 @@ namespace YFMSRF
             this.печататьToolStripMenuItem,
             this.закрытьToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(125, 48);
+            this.metroContextMenu1.Size = new System.Drawing.Size(127, 48);
             // 
             // печататьToolStripMenuItem
             // 
             this.печататьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отчетToolStripMenuItem});
             this.печататьToolStripMenuItem.Name = "печататьToolStripMenuItem";
-            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.печататьToolStripMenuItem.Text = "Печатать";
             // 
             // отчетToolStripMenuItem
             // 
             this.отчетToolStripMenuItem.Name = "отчетToolStripMenuItem";
-            this.отчетToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.отчетToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.отчетToolStripMenuItem.Text = "Отчет ";
             this.отчетToolStripMenuItem.Click += new System.EventHandler(this.отчетToolStripMenuItem_Click);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.закрытьToolStripMenuItem.Text = "закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -121,11 +124,21 @@ namespace YFMSRF
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(421, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // Connect_Printer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroButton1);
@@ -139,6 +152,7 @@ namespace YFMSRF
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +168,6 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

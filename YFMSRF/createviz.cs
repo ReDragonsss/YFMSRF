@@ -80,7 +80,7 @@ namespace YFMSRF
                 Inostranci.inostr_ima = reader[1].ToString();
                 Inostranci.inostr_otch = reader[2].ToString();
                 Inostranci.inostr_pol = reader[3].ToString();
-                Inostranci.inostr_datar = reader[2].ToString();
+                Inostranci.inostr_datar = reader[4].ToString();
             }
             reader.Close();
             PCS.ControlData.conn.Close();
@@ -88,12 +88,12 @@ namespace YFMSRF
         public void Getinfo3()//метод для получения номера паспорта иностранца
         {
             PCS.ControlData.conn.Open();
-            string sql = $"SELECT nomer_pass FROM pass Where kod_inostr='{Inostranci.inostr_id}'";
+            string sql = $"SELECT nomer_pass FROM pass Where kod_inostr ='{Inostranci.inostr_id}'";
             MySqlCommand command = new MySqlCommand(sql, PCS.ControlData.conn);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Inostranci.inostr_pass = reader[2].ToString();
+                Inostranci.inostr_pass = reader[0].ToString();
             }
             reader.Close();
             PCS.ControlData.conn.Close();
