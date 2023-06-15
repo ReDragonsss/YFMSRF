@@ -30,15 +30,19 @@ namespace YFMSRF
             {
                 case 1://отдел депортации
                     comboBox1.Enabled = false;
-                    comboBox2.Enabled = true;
                     comboBox1.Visible = false;
-                    comboBox2.Visible = true;
                     break;
                 case 2:// разрешительно-визовой работы
                     comboBox1.Enabled = true;
                     comboBox2.Enabled = false;
                     comboBox1.Visible = true;
                     comboBox2.Visible = false;
+                    break;
+                case 3:// Начальство
+                    comboBox1.Enabled = true;
+                    comboBox2.Enabled = true;
+                    comboBox1.Visible = true;
+                    comboBox2.Visible = true;
                     break;
                 default: //off
                     comboBox1.Enabled = false;
@@ -66,83 +70,93 @@ namespace YFMSRF
         }
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
-            Getinfo1();
-            Getinfo2();
-            Getinfo3();
-            string fam = Inostranci.inostr_fam;
-            string name = Inostranci.inostr_ima;
-            string otch = Inostranci.inostr_otch;
-            string dater = Inostranci.inostr_datar;
-            string datem = Inostranci.inostr_mestr;
-            string pol = Inostranci.inostr_pol;
-            string grajdan = Inostranci.inostr_grajd;
-            string seria = Inostranci.inostr_seria;
-            string nomer = Inostranci.inostr_pass;
-            DateTime date = DateTime.Today;
-            // Формируем текст заявления об увольнении
-            string text = string.Format("ВИЗОВАЯ АНКЕТА\n\n" +
-                                 "Код: ______________ \n" +
-                                 "Фамилия: {0}\n" +
-                                 "Имя(имена): {1}\n" +
-                                 "Отчество: {2}\n" +
-                                 "Дата рождения:{3} Место рождения:{4} Пол:{5}\n" +
-                                 "Гражданство: {6}\n" +
-                                 "Cерия {7} Номер {8}\n" +
-                                 "___________________________   ______________________\n" +
-                                 "        (подпись)                                 (фамилия и инициалы)\n\n" +
-                             "Начальник отдела по вопросам паспортно-визовой работы: Райдер.А.В\n\n" +
-                             "Дата: {9}", fam, name, otch, dater, datem, pol, grajdan, seria, nomer, date.ToShortDateString(), "Райдер.А.В", date.ToShortDateString());
+            if (Auth.auth_role == 2 || Auth.auth_role == 3)
+            {
+                Getinfo1();
+                Getinfo2();
+                Getinfo3();
+                string fam = Inostranci.inostr_fam;
+                string name = Inostranci.inostr_ima;
+                string otch = Inostranci.inostr_otch;
+                string dater = Inostranci.inostr_datar;
+                string datem = Inostranci.inostr_mestr;
+                string pol = Inostranci.inostr_pol;
+                string grajdan = Inostranci.inostr_grajd;
+                string seria = Inostranci.inostr_seria;
+                string nomer = Inostranci.inostr_pass;
+                DateTime date = DateTime.Today;
+                // Формируем текст заявления об увольнении
+                string text = string.Format("ВИЗОВАЯ АНКЕТА\n\n" +
+                                     "Код: ______________ \n" +
+                                     "Фамилия: {0}\n" +
+                                     "Имя(имена): {1}\n" +
+                                     "Отчество: {2}\n" +
+                                     "Дата рождения:{3} Место рождения:{4} Пол:{5}\n" +
+                                     "Гражданство: {6}\n" +
+                                     "Cерия {7} Номер {8}\n" +
+                                     "___________________________   ______________________\n" +
+                                     "        (подпись)                                 (фамилия и инициалы)\n\n" +
+                                 "Начальник отдела по вопросам паспортно-визовой работы: Райдер.А.В\n\n" +
+                                 "Дата: {9}", fam, name, otch, dater, datem, pol, grajdan, seria, nomer, date.ToShortDateString(), "Райдер.А.В", date.ToShortDateString());
+
+                // Установка параметров для печати
+                Font fontText = new Font("Times New Roman", 14, FontStyle.Regular);
+                Font fontTitle = new Font("Times New Roman", 24);
+                Font bodyFont = new Font("Times New Roman", 14);
+                Brush brush = Brushes.Black;
+                float x = e.MarginBounds.Left;
+                float y = e.MarginBounds.Top;
+                // Настройка расположения для заголовка
+                SizeF textSize = e.Graphics.MeasureString("ВИЗОВАЯ АНКЕТА", fontTitle);
+                float xTitle = (e.PageBounds.Width - textSize.Width) / 2;
+                float yTitle = y;
+                e.Graphics.DrawString("ВИЗОВАЯ АНКЕТА", fontTitle, brush, xTitle, yTitle);
+                // Печать текста
+                int spacing = 30;
+                float yPos = yTitle + textSize.Height + spacing;
+                yPos += spacing;
+                e.Graphics.DrawString("Код: ______________ ", fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Фамилия: " + fam, fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Имя(имена): " + name, fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Отчество: " + otch, fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Дата рождения: " + dater + " Место рождения: " + datem + "  Пол: " + pol, fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Гражданство: " + grajdan, fontText, brush, x, yPos);
+                yPos += spacing;
+                e.Graphics.DrawString("Cерия " + seria + " Номер " + nomer, fontText, brush, x, yPos);
+                yPos += spacing;
+                // Настройка расположения для подписи руководителя
+                SizeF bodySize = e.Graphics.MeasureString("(Фамилия и инициалы, Подпись)", bodyFont);
+                float xSignature = e.PageBounds.Right - bodySize.Width - 45;
+                float ySignature = e.PageBounds.Bottom - bodySize.Height - 50;
+                float ySignat = e.PageBounds.Bottom - bodySize.Height - 75;
+                // Печать подписи руководителя
+                e.Graphics.DrawString("___________________________", bodyFont, brush, xSignature, ySignat);
+                e.Graphics.DrawString("(Фамилия и инициалы, Подпись)", bodyFont, brush, xSignature, ySignature);
+                // Печать заголовка для подписи руководителя
+                string signatureTitle = "Начальник паспортно-визовой работы: Райдер.А.В";
+                SizeF signatureTitleSize = e.Graphics.MeasureString(signatureTitle, fontText);
+                float xSignatureTitle = xSignature - signatureTitleSize.Width - 50;
+                float ySignatureTitle = ySignature + bodySize.Height / 2 - signatureTitleSize.Height / 2;
+                e.Graphics.DrawString(signatureTitle, fontText, brush, xSignatureTitle, ySignatureTitle);
+                // Печать даты
+                string dateText = "Дата: " + DateTime.Today.ToShortDateString();
+                SizeF dateSize = e.Graphics.MeasureString(dateText, fontText);
+                float xDate = xSignatureTitle - dateSize.Width - 0;
+                float yDate = ySignatureTitle + signatureTitleSize.Height + spacing;
+                e.Graphics.DrawString(dateText, fontText, brush, xDate, yDate);
+            }
+            else
+            {
+                Bitmap txt = new Bitmap(dataGridView1.Size.Width + 0, dataGridView1.Size.Width + 10);// Мы создаем новый экземпляр класса
+                dataGridView1.DrawToBitmap(txt, dataGridView1.Bounds);//подготовка к разметке страниц
+                e.Graphics.DrawImage(txt, 100, 100); // разметка в дюймах
+            }
            
-            // Установка параметров для печати
-            Font fontText = new Font("Times New Roman", 14, FontStyle.Regular);
-            Font fontTitle = new Font("Times New Roman", 24);
-            Font bodyFont = new Font("Times New Roman", 14);
-            Brush brush = Brushes.Black;
-            float x = e.MarginBounds.Left;
-            float y = e.MarginBounds.Top;
-            // Настройка расположения для заголовка
-            SizeF textSize = e.Graphics.MeasureString("ВИЗОВАЯ АНКЕТА", fontTitle);
-            float xTitle = (e.PageBounds.Width - textSize.Width) / 2;
-            float yTitle = y;
-            e.Graphics.DrawString("ВИЗОВАЯ АНКЕТА", fontTitle, brush, xTitle, yTitle);
-            // Печать текста
-            int spacing = 30;
-            float yPos = yTitle + textSize.Height + spacing;
-            yPos += spacing;
-            e.Graphics.DrawString("Код: ______________ ", fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Фамилия: " + fam, fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Имя(имена): " + name, fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Отчество: " + otch, fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Дата рождения: " + dater + " Место рождения: " + datem + "  Пол: " + pol, fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Гражданство: " + grajdan, fontText, brush, x, yPos);
-            yPos += spacing;
-            e.Graphics.DrawString("Cерия " + seria + " Номер " + nomer,  fontText, brush, x, yPos);
-            yPos += spacing;
-            // Настройка расположения для подписи руководителя
-            SizeF bodySize = e.Graphics.MeasureString("(Фамилия и инициалы, Подпись)", bodyFont);
-            float xSignature = e.PageBounds.Right - bodySize.Width - 45;
-            float ySignature = e.PageBounds.Bottom - bodySize.Height - 50;
-            float ySignat = e.PageBounds.Bottom - bodySize.Height - 75;
-            // Печать подписи руководителя
-            e.Graphics.DrawString("___________________________", bodyFont, brush, xSignature, ySignat);
-            e.Graphics.DrawString("(Фамилия и инициалы, Подпись)", bodyFont, brush, xSignature, ySignature);
-            // Печать заголовка для подписи руководителя
-            string signatureTitle = "Начальник паспортно-визовой работы: Райдер.А.В";
-            SizeF signatureTitleSize = e.Graphics.MeasureString(signatureTitle, fontText);
-            float xSignatureTitle = xSignature - signatureTitleSize.Width - 50;
-            float ySignatureTitle = ySignature + bodySize.Height / 2 - signatureTitleSize.Height / 2;
-            e.Graphics.DrawString(signatureTitle, fontText, brush, xSignatureTitle, ySignatureTitle);
-            // Печать даты
-            string dateText = "Дата: " + DateTime.Today.ToShortDateString();
-            SizeF dateSize = e.Graphics.MeasureString(dateText, fontText);
-            float xDate = xSignatureTitle - dateSize.Width - 0;
-            float yDate = ySignatureTitle + signatureTitleSize.Height + spacing;
-            e.Graphics.DrawString(dateText, fontText, brush, xDate, yDate);
         }
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -242,20 +256,21 @@ namespace YFMSRF
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-         GetListUsers($"SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
-            dataGridView1.Columns[0].FillWeight = 8;
-            dataGridView1.Columns[1].FillWeight = 8;
-            dataGridView1.Columns[2].FillWeight = 8;
-            dataGridView1.Columns[3].FillWeight = 6;
-            dataGridView1.Columns[4].FillWeight = 9;
-            dataGridView1.Columns[5].FillWeight = 15;
+         GetListUsers($"SELECT id_document,famil_sotr,inicial_sotr,grajdan,ima,fam,otch,data_pribit,data_podpisan,data_polych,obstoatel_osn,poloj_fed FROM nerazrehviezde");
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+    
 
         private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -270,7 +285,6 @@ namespace YFMSRF
                     index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
                     //ID конкретной записи в Базе данных, на основании индекса строки
                     id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[6].Value.ToString();
-                    label1.Text= id_selected_rows;
                 }
             }
         }

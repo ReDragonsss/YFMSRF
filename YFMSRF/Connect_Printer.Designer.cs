@@ -41,7 +41,6 @@ namespace YFMSRF
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +106,7 @@ namespace YFMSRF
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Виза"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 36);
+            this.comboBox1.Location = new System.Drawing.Point(111, 36);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(157, 21);
             this.comboBox1.TabIndex = 2;
@@ -118,27 +117,17 @@ namespace YFMSRF
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Эмигранты"});
-            this.comboBox2.Location = new System.Drawing.Point(146, 36);
+            this.comboBox2.Location = new System.Drawing.Point(274, 36);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(157, 21);
             this.comboBox2.TabIndex = 3;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
             // 
             // Connect_Printer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 450);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroButton1);
@@ -147,12 +136,11 @@ namespace YFMSRF
             this.MaximumSize = new System.Drawing.Size(804, 450);
             this.MinimumSize = new System.Drawing.Size(804, 450);
             this.Name = "Connect_Printer";
-            this.Text = "Архивация";
+            this.Text = "Печать";
             this.Load += new System.EventHandler(this.Test_Connect_Printer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -168,6 +156,5 @@ namespace YFMSRF
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -106,7 +106,6 @@ namespace YFMSRF
             {
                 table.Clear();
                 dataGridView1.DataSource = bSource;
-                GetListUsers($"SELECT id_viz, data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM {Dell.dell}");
             }
         }
         public void GetListUsers(string commandStr)
@@ -131,9 +130,9 @@ namespace YFMSRF
         {
             // доступ высшее начальство
             // доступ отдел по вопросам депортации
+            Dell.dell = "deportiruuchi";
             reload_list();
             GetListUsers("SELECT fam AS'Фамилия',ima AS'Имя',otech AS'Отчество',data_rojden AS'Дата рождения',grajdanstvo AS'Гражданство',seria_and_nomer_pasporta AS'Серия и номер паспорта' FROM deportiruuchi");
-            Dell.dell = "deportiruuchi";
             dataGridView1.Columns[0].FillWeight = 9;
             dataGridView1.Columns[1].FillWeight = 9;
             dataGridView1.Columns[2].FillWeight = 10;
@@ -152,9 +151,9 @@ namespace YFMSRF
         {
             // доступ высшее начальство
             // доступ отдел по вопросам гражданства
+            Dell.dell = "viza";
             reload_list();
             GetListUsers($"SELECT id_viz, data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM viza");
-            Dell.dell = "viza";
             dataGridView1.Columns[0].FillWeight = 5;
             dataGridView1.Columns[1].FillWeight = 11;
             dataGridView1.Columns[2].FillWeight = 11;

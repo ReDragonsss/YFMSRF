@@ -44,7 +44,7 @@ namespace YFMSRF
                 case 3:// Начальство 
                     metroButton1.Enabled = false;
                     metroButton1.Visible = false;
-                    metroButton7.Visible = false;
+                    metroButton7.Visible = true;
                     metroButton3.Enabled = true;
                     metroButton7.Enabled = true;
                     metroButton3.Visible = true;

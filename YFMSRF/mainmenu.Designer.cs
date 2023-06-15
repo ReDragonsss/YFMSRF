@@ -182,7 +182,7 @@ namespace YFMSRF
             this.metroButton6.Name = "metroButton6";
             this.metroButton6.Size = new System.Drawing.Size(165, 23);
             this.metroButton6.TabIndex = 15;
-            this.metroButton6.Text = "Архивация";
+            this.metroButton6.Text = "Печать";
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
