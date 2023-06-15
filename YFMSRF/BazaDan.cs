@@ -153,7 +153,7 @@ namespace YFMSRF
             // доступ отдел по вопросам гражданства
             Dell.dell = "viza";
             reload_list();
-            GetListUsers($"SELECT id_viz, data_vidachi, na_srock, grajdanstv, fio, nomber_pass, data_rojd, pol, prinim_organiz, dopol_sveden FROM viza");
+            GetListUsers($"SELECT id_viz AS'Виза', data_vidachi AS'Дата выдачи', na_srock AS'Срок', grajdanstv AS'Гражданство', fio AS'ФИО', nomber_pass AS'Номер паспорта', data_rojd AS'Дата рождения', pol AS'Пол', prinim_organiz AS'принимающая организация', dopol_sveden AS'Дополнительные сведения' FROM viza");
             dataGridView1.Columns[0].FillWeight = 5;
             dataGridView1.Columns[1].FillWeight = 11;
             dataGridView1.Columns[2].FillWeight = 11;

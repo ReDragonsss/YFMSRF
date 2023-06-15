@@ -256,7 +256,7 @@ namespace YFMSRF
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-         GetListUsers($"SELECT id_document,famil_sotr,inicial_sotr,grajdan,ima,fam,otch,data_pribit,data_podpisan,data_polych,obstoatel_osn,poloj_fed FROM nerazrehviezde");
+         GetListUsers($"SELECT id_document AS'Код документа',famil_sotr AS'Фамилия сотрудника',inicial_sotr AS'Инициалы сторудника',grajdan AS'Гражданство',ima AS'Имя',fam AS'Фамилия',otch AS'Отчество',data_pribit AS'Дата прибытия',data_podpisan AS''Дата подписания,data_polych AS'Дата получения',obstoatel_osn AS'Обосновния',poloj_fed AS'Положение' FROM nerazrehviezde");
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
