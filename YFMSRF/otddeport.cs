@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Wordprocessing;
 using MySql.Data.MySqlClient;
 
 namespace YFMSRF
@@ -34,7 +35,9 @@ namespace YFMSRF
             string p12 = metroTextBox8.Text;
             string p13 = metroTextBox14.Text;
             InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13);
-
+            Action.action = "Занес эмигранта в систему";
+            Aud instance = new Aud();
+            bool auditResult = instance.Audit();
         }
         public bool InsertComp(string dolj, string fams, string inics, string specz, string graj, string ima, string fam, string otch, string data_pribitstring,string datapod, string datapol, string obsto, string poloj)
         {
@@ -59,6 +62,7 @@ namespace YFMSRF
                 if (InsertCount != 0)
                 {
                     result = true;
+                    MessageBox.Show($"Сохранено");
                 }
                 PCS.ControlData.conn.Close();
             }

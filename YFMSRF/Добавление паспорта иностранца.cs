@@ -82,6 +82,7 @@ namespace YFMSRF
                 if (InsertCount != 0)
                 {
                     result = true;
+                    MessageBox.Show($"Сохранено");
                 }
                 PCS.ControlData.conn.Close();
             }
@@ -110,6 +111,11 @@ namespace YFMSRF
             string p19 = metroTextBox10.Text;
             string p20 = Inostranci.inostr_id;
             InsertComp(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20);
+            this.Close();
+            Form4 form4 = new Form4();
+            form4.Close();
+            Form5 form5 = new Form5();
+            form5.Close();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
